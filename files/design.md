@@ -4,6 +4,15 @@
 
 This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, those words are used in the RFC sense.
 
+These principles and practices SHOULD be applied by default. Deviation MUST be accompanied by a brief justification in a comment or commit message.
+
+## Philosophy
+
+Patterns are the default vocabulary for design decisions. When structuring new code, reach for a named pattern first. Ad hoc solutions should be the exception, not the starting point. If code feels shapeless, it likely maps to a pattern — find it.
+
+## Code Conflicts
+
+<!-- not sure about these -->
 If code conflicts with this spec, either:
 
 - fix the code, or
