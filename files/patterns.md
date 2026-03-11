@@ -1,6 +1,6 @@
 # Patterns
 
-A reference catalog of software design patterns. See `design.md` for principles and architectural guidance.
+A reference catalog of software design patterns.
 
 ## Philosophy
 

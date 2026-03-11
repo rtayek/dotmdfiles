@@ -11,10 +11,6 @@ If instructions in this file conflict with another file, this file takes precede
 ## Behavior
 
 - Read all of the .md files in this folder and its sub-folders before doing anything and follow their instructions.
-<!-- do i really want this next one? -->
-- Ask before refactoring — understand intent first.
-- Make one logical change per turn; keep diffs small and reviewable.
-- Never delete code without explaining why.
 - If something is unclear, say so rather than guessing.
 
 ## What agents may do freely
@@ -23,11 +19,9 @@ If instructions in this file conflict with another file, this file takes precede
 
 ## What agents must ask before doing
 
-- Changing public APIs or interfaces.
 - Renaming or moving files.
 - Adding new dependencies.
 - Making architectural changes.
-- Widening the access modifier of internal methods or classes.
 
 ## What agents must never do
 

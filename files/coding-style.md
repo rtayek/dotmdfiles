@@ -63,9 +63,12 @@ Every class MUST follow this ordering:
 
 1. constructors
 2. public methods
-3. package-private methods
-4. private methods
-5. fields (at the bottom)
+3. protected methods
+4. package-private methods
+5. private methods
+6. main method
+7. instance fields (at the bottom)
+8. static fields (at the bottom)
 
 Fields at the top are not allowed. The file should read top-down like an execution narrative.
 
@@ -76,6 +79,7 @@ Fields at the top are not allowed. The file should read top-down like an executi
 - Fields SHOULD NOT be public unless they are final.
 - Prefer immutable objects.
 
+<!-- maybe these language specific things belong in a separate .md file? ->>
 ## Java (25+)
 
 - Take full advantage of Java 25 features.
@@ -134,3 +138,15 @@ Recurring exceptions indicate the spec needs updating.
 - Utilities must be dependency-light and general-purpose.
 - Project-specific logic must NOT be placed in util packages.
 - If a utility depends on model/parser/UI types, it is not a utility.
+
+## Agent rules
+
+Agents must ask before:
+
+- refactoring
+- changing public APIs or interfaces
+- widening the access modifier of internal methods or classes
+
+Agents MUST NOT:
+
+- delete code without explaining why

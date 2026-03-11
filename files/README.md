@@ -6,15 +6,6 @@ A collection of prototype `.md` files for use as starting templates in software 
 
 Copy these files into a new project and customize them to fit. Each file covers a distinct concern and is designed to be self-contained.
 
-## Files
-
-| File | Purpose |
-|------|---------|
-| `agents.md` | Rules governing what AI agents may do freely, must ask about, or must never do |
-| `persona.md` | AI agent identity, communication style, and tone |
-| `coding-style.md` | Naming, formatting, and language-specific style rules |
-| `design.md` | Architectural principles, design goals, and engineering guidelines |
-| `patterns.md` | Catalog of OO, architectural, enterprise, and test patterns |
 
 ## Usage
 
@@ -24,7 +15,7 @@ Copy these files into a new project and customize them to fit. Each file covers 
 
 ## Customization tips
 
-- `design.md` — fill in the `## Structure` section and resolve the `## To be decided` items early.
-- `coding-style.md` — remove language sections that don't apply.
-- `persona.md` — adjust identity and tone to match the working style you want.
-- `agents.md` — tighten or loosen the "must ask" list based on how much autonomy you want to grant.
+- Fill in any `## Structure` sections and resolve `## To be decided` items early.
+- Remove language sections from style files that don't apply to your project.
+- Adjust persona and tone to match the working style you want.
+- Tighten or loosen agent permission lists based on how much autonomy you want to grant.
