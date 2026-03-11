@@ -8,4 +8,4 @@ A collection of prototype `.md` template files for software projects. Each file 
 
 ## Conventions
 
-Follow the all of the`.md` files present in this project for coding style, design decisions, agent behavior, and communication style.
+Follow all of the `.md` files present in this project for coding style, design decisions, agent behavior, and communication style.

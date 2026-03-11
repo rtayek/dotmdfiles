@@ -14,8 +14,8 @@ If code conflicts with this spec, either:
 
 ## General
 
-- Clarity over cleverness — code is read far more than it is written.
-- Small functions with a single responsibility.
+- Optimize for the reader — code is read far more than it is written.
+- Small functions.
 - Meaningful names; no single-letter variables outside loop counters unless they are in common use in mathematics, computer science, physics or engineering.
 - Comment out dead code; do not delete it.
 
@@ -77,9 +77,8 @@ Fields at the top are not allowed. The file should read top-down like an executi
 - Default to **package-private** for classes, methods, and fields.
 - Public/protected is a commitment — treat it as a deliberate external API decision.
 - Fields SHOULD NOT be public unless they are final.
-- Prefer immutable objects.
 
-<!-- maybe these language specific things belong in a separate .md file? ->>
+<!-- maybe these language specific things belong in a separate .md file? -->
 ## Java (25+)
 
 - Take full advantage of Java 25 features.
@@ -111,12 +110,15 @@ Fields at the top are not allowed. The file should read top-down like an executi
 
 Tests are the functional spec — behavioral documentation MUST live in tests, not in prose comments.
 
-- Use xUnit Test Patterns liberally.
+Use xUnit Test Patterns liberally (see `patterns.md`).
+
 - If behavior changes, tests MUST change.
 - One assertion concept per test.
 - Tests must be deterministic — no random data without a fixed seed, no wall-clock time, no network, no environment-specific paths, no reliance on test order.
 - Cover the happy path, boundary conditions, and expected error cases.
 - If tests write files, write into an isolated temp directory and clean up afterward.
+- All new code must compile and pass existing tests.
+- New logic should come with at least one test.
 
 ## Build
 

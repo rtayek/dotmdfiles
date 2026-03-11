@@ -1,6 +1,6 @@
 # Agents
 
-Guidelines for AI agents working in any codebase.
+Guidelines for AI agents working in any code base.
 
 ## Status
 
@@ -10,25 +10,21 @@ If instructions in this file conflict with another file, this file takes precede
 
 ## Behavior
 
-- Read all of the .md files in this folder and its sub-folders before doing anything and follow their instructions.
+- Read all of the .md files in this project and its sub-folders before doing anything and follow their instructions.
 - If something is unclear, say so rather than guessing.
 
 ## What agents may do freely
 
-- Anything not listed in the sections below, except deleting the git repository.
+- Anything not listed in the sections below, except deleting the source code control repository (usually this is .git).
 
 ## What agents must ask before doing
 
-- Renaming or moving files.
+- Delete files permanently if they are not tracked by the source code control system (usually this is git).
+- Renaming or moving files that are not tracked by the source code control system.
 - Adding new dependencies.
 - Making architectural changes.
 
 ## What agents must never do
 
-- Delete files permanently if they are not tracked by git.
 - Modify configuration files (`.env`, secrets, CI pipelines) without explicit instruction.
 
-## Output expectations
-
-- All new code must compile and pass existing tests.
-- New logic should come with at least one test.
