@@ -30,5 +30,5 @@ The files in `files/` are **prototypes**, not active instructions. Do not follow
 
 ## What agents must never do
 
-- Delete a git repository.
-- Delete files permanently if they are not tracked by git.
+- Delete a source code control repository.
+- Delete files permanently if they are not tracked by the scource code control system..

@@ -1,0 +1,13 @@
+Good examples to point you at:
+
+Curated collections
+
+awesome-claude-code — skills, hooks, slash commands, CLAUDE.md examples
+awesome-copilot — community Copilot instructions, agents, skills
+claude-code-showcase — full project example with .claude/agents/, commands, hooks
+Articles
+
+Writing a good CLAUDE.md — solid practical advice
+One Prompt to Rule Them All — how to reuse the same markdown across Copilot, Claude, Cursor, Codex
+Notable finding: AGENTS.md is now an emerging open standard backed by Sourcegraph, OpenAI, Google, Cursor, and others — one file, any agent.
+ That's basically what your files/agents.md already is. Worth keeping an eye on that spec.

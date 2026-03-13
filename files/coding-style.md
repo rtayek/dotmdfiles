@@ -6,12 +6,6 @@ Applies to all languages unless a language-specific section says otherwise.
 
 This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, those words are used in the RFC sense.
 
-If code conflicts with this spec, either:
-
-<!-- below is not quite right -->
-- fix the code, or
-- update this spec and *then* fix the code.
-
 ## General
 
 - Optimize for the reader — code is read far more than it is written.
@@ -118,6 +112,7 @@ Use xUnit Test Patterns liberally (see `patterns.md`).
 - Cover the happy path, boundary conditions, and expected error cases.
 - If tests write files, write into an isolated temp directory and clean up afterward.
 - All new code must compile and pass existing tests.
+- If you create new code then write tests for the new code.
 - New logic should come with at least one test.
 
 ## Build
@@ -142,6 +137,8 @@ Recurring exceptions indicate the spec needs updating.
 - If a utility depends on model/parser/UI types, it is not a utility.
 
 ## Agent rules
+
+For any non-trivial change, agents MUST create and check out a feature branch with a short descriptive name: `feature <name>`.
 
 Agents must ask before:
 
