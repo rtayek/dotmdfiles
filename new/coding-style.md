@@ -19,12 +19,6 @@
 | Variables | camelCase |
 | Enum values | camelCase |
 
-## Comments
-
-Comments must add information not obvious from code.
-
-Dead code should be deleted rather than commented out.
-
 ## Agent rules
 
 Agents must ask before:

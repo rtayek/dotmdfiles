@@ -1,10 +1,10 @@
 # Templates for AGENTS.md files
 
-A collection of prototype `.md` files for use as starting templates in software projects.
+A collection of prototype `.md` files for use  in software projects.
 
 ## Usage
 
-1. Copy the relevant files into your project'.
+1. Copy the relevant files into your project.
 2. Customize as necessary.
 
 ## Customization tips
