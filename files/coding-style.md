@@ -64,6 +64,8 @@ Every class MUST follow this ordering:
 7. instance fields (at the bottom)
 8. static fields (at the bottom)
 
+Place static methods after instance methods.
+
 Fields at the top are not allowed. The file should read top-down like an execution narrative.
 
 ## Visibility

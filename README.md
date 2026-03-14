@@ -1,4 +1,4 @@
-# Templates for AGENTS.md files
+# Templates for AGENTS.md files (Preliminary)
 
 A collection of prototype `.md` files for use  in software projects.
 
