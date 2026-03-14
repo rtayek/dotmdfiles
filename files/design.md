@@ -78,16 +78,6 @@ If a dependency is added, it MUST be justified by:
 - Public APIs are stable once released; breaking changes require a major version bump.
 - Internal APIs may change freely.
 
-## Refactoring
-
-- Refactors MUST preserve behavior unless intentionally changing behavior (which requires updating tests).
-- Do not refactor unrelated code.
-- Prefer modifying existing files over creating new ones.
-- Process: ensure tests exist → refactor structure/names/packages → remove duplication → run tests → micro-optimizations.
-- If tests break during refactor, that is a stop-the-line event.
-- Prefer clean breaks: move code to the correct location, rename packages cleanly, remove dead compatibility layers.
-- Temporary shims are only allowed if time-boxed and tracked by a test or TODO.
-
 ## Object-Oriented Design Principles
 
 - **SRP** (Single Responsibility) — a class has one reason to change.

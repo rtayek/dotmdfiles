@@ -11,7 +11,6 @@ This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, th
 - Optimize for the reader — code is read far more than it is written.
 - Small functions.
 - Meaningful names; no single-letter variables outside loop counters unless they are in common use in mathematics, computer science, physics or engineering.
-- Comment out dead code; do not delete it.
 
 ## Comments Policy
 
@@ -112,8 +111,6 @@ Use xUnit Test Patterns liberally (see `patterns.md`).
 - Cover the happy path, boundary conditions, and expected error cases.
 - If tests write files, write into an isolated temp directory and clean up afterward.
 - All new code must compile and pass existing tests.
-- If you create new code then write tests for the new code.
-- New logic should come with at least one test.
 
 ## Build
 
@@ -137,8 +134,6 @@ Recurring exceptions indicate the spec needs updating.
 - If a utility depends on model/parser/UI types, it is not a utility.
 
 ## Agent rules
-
-For any non-trivial change, agents MUST create and check out a feature branch with a short descriptive name: `feature <name>`.
 
 Agents must ask before:
 

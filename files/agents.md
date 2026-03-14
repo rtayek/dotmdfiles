@@ -30,6 +30,5 @@ If instructions in this file conflict with another file, this file takes precede
 
 ## Agents should
 
-- make small, reversible changes
 - ask when intent is unclear
 - explain non-obvious changes
