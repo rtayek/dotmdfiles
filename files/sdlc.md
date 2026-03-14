@@ -1,6 +1,5 @@
 > Purpose: Defines the agile/TDD software development lifecycle for agents.
 > Scope: Process, iteration, testing, and delivery rules for AI agents.
-> See also: agents.md, coding-style.md
 
 # SDLC
 
@@ -49,7 +48,7 @@ An iteration is complete when:
 - All new behavior is covered by tests.
 - All tests pass.
 - The code has been refactored and is clean.
-- Comment out dead code; do not delete it.
+- No uncommented dead code has been introduced.
 
 ## Definition of Done
 
@@ -59,7 +58,7 @@ A task is done when:
 - All tests pass.
 - The build passes.
 - No regressions have been introduced.
-- The code meets the standards in `coding-style.md`.
+- The code meets the project coding standards.
 
 ## Branching
 

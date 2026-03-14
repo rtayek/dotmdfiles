@@ -1,6 +1,5 @@
 > Purpose: Describe the current state of the project.
 > Scope: goals, constraints, and open questions.
-> See also: design.md, workflow.md
 
 # Project
 

@@ -11,7 +11,6 @@ If instructions in this file conflict with another file, this file takes precede
 ## Behavior
 
 - Read all of the .md files in this project and its sub-folders before doing anything and follow their instructions.
-- If something is unclear, say so rather than guessing.
 
 ## What agents may do freely
 
@@ -30,5 +29,5 @@ If instructions in this file conflict with another file, this file takes precede
 
 ## Agents should
 
-- ask when intent is unclear
+- ask when anything is unclear
 - explain non-obvious changes

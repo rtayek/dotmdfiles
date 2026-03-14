@@ -9,6 +9,7 @@ This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, th
 ## General
 
 - Optimize for the reader — code is read far more than it is written.
+- Comment out dead code; do not delete it.
 - Small functions.
 - Meaningful names; no single-letter variables outside loop counters unless they are in common use in mathematics, computer science, physics or engineering.
 
@@ -103,7 +104,7 @@ Fields at the top are not allowed. The file should read top-down like an executi
 
 Tests are the functional spec — behavioral documentation MUST live in tests, not in prose comments.
 
-Use xUnit Test Patterns liberally (see `patterns.md`).
+Use xUnit Test Patterns liberally.
 
 - If behavior changes, tests MUST change.
 - One assertion concept per test.
