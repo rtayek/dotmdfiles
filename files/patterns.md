@@ -166,6 +166,106 @@ When you encounter a smell, treat it as a signal that the code wants to be refac
 | **Refused Bequest** | subclass ignores inherited methods; reconsider the hierarchy |
 | **Comments** | a comment that explains confusing code; refactor the code instead |
 
+
+## Refactoring Techniques
+
+Reference: *Refactoring* (Fowler, 2nd ed.).
+
+### Basic Refactoring
+
+| Technique | Summary |
+|-----------|---------|
+| **Extract Function** | turn a code fragment into a function with a name that explains its purpose |
+| **Inline Function** | replace a call to a trivially simple function with the function body |
+| **Extract Variable** | introduce a named variable to explain a complex expression |
+| **Inline Variable** | replace a variable that is assigned once with the expression it holds |
+| **Change Function Declaration** | rename a function, add or remove parameters, change signature |
+| **Encapsulate Variable** | wrap a public variable in getter/setter functions to control access |
+| **Rename Variable** | give a variable a name that better communicates its purpose |
+| **Introduce Parameter Object** | group parameters that always travel together into a single object |
+| **Combine Functions into Class** | bundle a cluster of functions that operate on shared data into a class |
+| **Combine Functions into Transform** | feed input data into a transform function that returns it with derived fields |
+| **Split Phase** | separate code that processes data in two distinct phases into two functions |
+
+### Encapsulation
+
+| Technique | Summary |
+|-----------|---------|
+| **Encapsulate Record** | wrap a plain data record in a class to control access and add behavior |
+| **Encapsulate Collection** | return a read-only view of a collection; provide add/remove methods |
+| **Replace Primitive with Object** | replace a primitive value with a small class when it acquires behavior |
+| **Replace Temp with Query** | replace a temp variable with a method call so the logic is shareable |
+| **Extract Class** | move related fields and methods into a new class |
+| **Inline Class** | fold a class that is no longer pulling its weight into another |
+| **Hide Delegate** | add methods to a server class so clients don't need to know about a delegate |
+| **Remove Middle Man** | make clients call the delegate directly when delegation is the only job |
+| **Substitute Algorithm** | replace the body of a function with a cleaner algorithm |
+
+### Moving Features
+
+| Technique | Summary |
+|-----------|---------|
+| **Move Function** | move a function to the class or module that uses it most |
+| **Move Field** | move a field to the class that uses it most |
+| **Move Statements into Function** | move repeated statements next to the function they always accompany |
+| **Move Statements to Callers** | move statements out of a function when behavior needs to vary at call sites |
+| **Replace Inline Code with Function Call** | replace inline code with a call to an existing function that does the same thing |
+| **Slide Statements** | move related statements together to make the code easier to extract |
+| **Split Loop** | split a loop that does two things into two loops, each doing one thing |
+| **Replace Loop with Pipeline** | replace a loop with a pipeline operation such as filter or map |
+| **Remove Dead Code** | delete unused code outright — version control remembers it |
+
+### Organizing Data
+
+| Technique | Summary |
+|-----------|---------|
+| **Split Variable** | give a variable a separate name each time it holds a different value |
+| **Rename Field** | rename a field when its name does not communicate its purpose |
+| **Replace Derived Variable with Query** | remove a variable that can be computed from other data and compute it on demand |
+| **Change Reference to Value** | treat an object as a value (immutable) rather than a shared reference |
+| **Change Value to Reference** | use a single shared object instead of multiple copies of the same data |
+
+### Simplifying Conditionals
+
+| Technique | Summary |
+|-----------|---------|
+| **Decompose Conditional** | extract the condition and each branch into well-named functions |
+| **Consolidate Conditional Expression** | combine a sequence of checks with the same result into a single check |
+| **Replace Nested Conditional with Guard Clauses** | use early returns to handle special cases and flatten nesting |
+| **Replace Conditional with Polymorphism** | replace a switch or if/else on type with polymorphic dispatch |
+| **Introduce Special Case** | add a special-case object to handle a common degenerate case (e.g. null) |
+| **Introduce Assertion** | add an assertion to make an assumption explicit and verifiable |
+
+### Refactoring APIs
+
+| Technique | Summary |
+|-----------|---------|
+| **Separate Query from Modifier** | split a function that returns a value and has side effects into two functions |
+| **Parameterize Function** | replace multiple similar functions with one function and a parameter |
+| **Remove Flag Argument** | replace a boolean parameter that selects behavior with two explicit functions |
+| **Preserve Whole Object** | pass the object rather than pulling out individual values to pass separately |
+| **Replace Parameter with Query** | remove a parameter when the function can derive the value itself |
+| **Replace Query with Parameter** | add a parameter when a function should not access a value directly |
+| **Remove Setting Method** | delete a setter when a field should only be set at construction time |
+| **Return Modified Value** | return the modified value instead of mutating a parameter in place |
+| **Replace Error Code with Exception** | throw an exception instead of returning a special error code |
+| **Replace Exception with Precheck** | check a precondition before calling a function instead of catching its exception |
+
+### Dealing with Inheritance
+
+| Technique | Summary |
+|-----------|---------|
+| **Pull Up Method** | move a method that is identical in subclasses up to the superclass |
+| **Pull Up Field** | move a field used by multiple subclasses up to the superclass |
+| **Pull Up Constructor Body** | move common constructor logic up to the superclass constructor |
+| **Push Down Method** | move a method used by only one subclass down into that subclass |
+| **Push Down Field** | move a field used by only one subclass down into that subclass |
+| **Replace Type Code with Subclasses** | create subclasses for each variant instead of using a type code field |
+| **Remove Subclass** | replace a subclass that does too little with a field on the superclass |
+| **Extract Superclass** | pull shared behavior from two similar classes into a new superclass |
+| **Collapse Hierarchy** | merge a superclass and subclass when they are no longer different enough |
+| **Replace Subclass with Delegate** | replace inheritance with a delegate object to avoid coupling to a hierarchy |
+| **Replace Superclass with Delegate** | replace inheritance with composition when the superclass is not a true generalization |
 ## Pattern Literature
 
 | Book | Authors | Focus |
