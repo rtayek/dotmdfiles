@@ -27,12 +27,9 @@ If instructions in this file conflict with another file, this file takes precede
 ## What agents must never do
 
 - Modify configuration files (`.env`, secrets, CI pipelines) without explicit instruction.
-## Behavior
 
-## Agents SHOULD:
+## Agents should
 
 - make small, reversible changes
 - ask when intent is unclear
 - explain non-obvious changes
-
-

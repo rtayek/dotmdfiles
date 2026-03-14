@@ -1,0 +1,40 @@
+For an SDLC designed specifically for AI agents, you’re looking at a "Test-Driven Autonomous Loop."
+Since agents don't get bored writing boilerplate but do struggle with "hallucinating" logic, you want an SDLC that treats tests as the agent's primary source of truth.
+Here is a blueprint for an Agent-Centric SDLC (A-SDLC):
+1. The "Spec-to-Test" Phase (The Core)
+Instead of a human writing code, a human (or Lead Agent) writes a Structured Spec.
+
+* The Process: The Agent's first task is to turn that spec into a comprehensive test suite before writing a single line of functional code.
+* The Benefit: This creates a "sandbox" with clear win/loss conditions. If the agent writes code that passes the tests, it’s done.
+
+2. The Caveat: "Interface First"
+The biggest bottleneck for agents in TDD is Mocking. Agents often hallucinate how an external API or database works, creating "passing" tests that fail in the real world.
+
+* The Process: Before the tests, you must define the Interfaces/Schemas (using tools like OpenAPI, Protobuf, or TypeScript types).
+* The Rule: The agent is not allowed to write tests until the schemas for all dependencies are locked in. This prevents "Mock Hallucination."
+
+3. The "Self-Healing" Development Loop
+Traditional SDLCs have a "Dev" phase and a "Testing" phase. In an Agent SDLC, these are one and the same.
+
+* The Loop:
+1. Agent generates code.
+   2. Agent runs tests.
+   3. If tests fail, the Error Trace is fed back into the Agent as a new prompt.
+   4. Repeat until $Pass = 100\%$.
+* Human Role: You aren't a coder; you are a Reviewer of Tests. If the tests are good, the code will be good.
+
+4. Continuous "Red-Teaming" (Post-Dev)
+Because agents can generate edge cases faster than humans, add a phase where a second agent tries to "break" the first agent's code.
+
+* The Process: An "Adversarial Agent" looks at the code and writes new, meaner tests (edge cases, null pointers, injection attacks). If the code fails these new tests, it goes back to Phase 3.
+
+Summary of the A-SDLC Flow:
+
+   1. Define Schema (Lock the interfaces)
+   2. Generate Test Suite (The "Test First" anchor)
+   3. Autonomous Iteration (Code → Test → Fail → Fix → Pass)
+   4. Adversarial Audit (Agent-on-Agent testing)
+   5. Human Sign-off (Reviewing the test coverage, not just the code)
+
+Why this works: It turns the "High Development Overhead" of TDD into an Automated Quality Filter. You spend your time defining what the software should do (Tests), and the agent spends its "time" (tokens) figuring out how to do it.
+
