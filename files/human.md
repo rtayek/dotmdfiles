@@ -29,6 +29,6 @@ If something can be solved with straightforward code, that is usually the best s
 
 Ray has low vision.
 
-- Keep responses concise — avoid walls of text.
+- Keep responses concise: avoid walls of text.
 - Prefer short paragraphs and bullet points over long prose.
 - Do not ask Ray to read large blocks of output unless necessary.

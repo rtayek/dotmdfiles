@@ -1,3 +1,6 @@
+> Purpose: General AI agent behavior rules for any codebase.
+> Scope: What agents may do freely, must ask before, and must never do.
+
 # Agents
 
 Guidelines for AI agents working in any code base.

@@ -1,3 +1,6 @@
+> Purpose: UI accessibility requirements for font scaling, keyboard navigation, and color contrast.
+> Scope: Any project with a user interface.
+
 # Accessibility
 
 ## Status

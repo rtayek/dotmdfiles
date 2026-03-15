@@ -1,10 +1,13 @@
+> Purpose: Reference catalog of software design patterns.
+> Scope: GoF, architectural, enterprise integration, resilience, xUnit test patterns, code smells, and refactoring techniques.
+
 # Patterns
 
 A reference catalog of software design patterns.
 
 ## Philosophy
 
-Patterns are the default vocabulary for design decisions. When structuring new code, reach for a named pattern first. Ad hoc solutions should be the exception, not the starting point. If code feels shapeless, it likely maps to a pattern — find it.
+Patterns are the default vocabulary for design decisions. When structuring new code, reach for a named pattern first. Ad hoc solutions should be the exception, not the starting point. If code feels shapeless, it likely maps to a pattern: find it.
 
 ## Object-Oriented Design Patterns
 
@@ -16,7 +19,7 @@ Reference: *Design Patterns* (Gang of Four).
 | Factory Method | decouple creation from use; let subclasses decide the concrete type |
 | Abstract Factory | create families of related objects without specifying concrete classes |
 | Builder | construct complex objects step-by-step; avoid telescoping constructors |
-| Singleton | one instance needed globally — prefer dependency injection instead where possible |
+| Singleton | one instance needed globally: prefer dependency injection instead where possible |
 | Prototype | clone existing objects when construction is expensive |
 
 ### Structural
@@ -52,9 +55,9 @@ Reference: *Design Patterns* (Gang of Four).
 | **MVC** (Model-View-Controller) | separate data (model), presentation (view), and input handling (controller) |
 | **MVP** (Model-View-Presenter) | view is passive; presenter mediates between view and model |
 | **MVVM** (Model-View-ViewModel) | viewmodel exposes observable state; view binds to it |
-| **Layered / N-tier** | strict layers (presentation → service → domain → persistence); dependencies flow inward only |
+| **Layered / N-tier** | strict layers (presentation â†’ service â†’ domain â†’ persistence); dependencies flow inward only |
 | **Hexagonal / Ports & Adapters** | core domain has no external dependencies; adapters implement ports for I/O |
-| **Clean Architecture** | concentric rings: domain → use cases → interface adapters → frameworks; the Dependency Rule: source code dependencies point inward only |
+| **Clean Architecture** | concentric rings: domain â†’ use cases â†’ interface adapters â†’ frameworks; the Dependency Rule: source code dependencies point inward only |
 | **Pipeline** | data flows through a sequence of independent processing stages |
 | **Event-Driven** | components communicate via events; decouples producers from consumers |
 | **Event Sourcing** | store state as an immutable sequence of events; current state derived by replaying them |
@@ -127,7 +130,7 @@ Reference: *xUnit Test Patterns* (Meszaros).
 
 | Pattern | Summary |
 |---------|---------|
-| **Four-Phase Test** | Arrange → Act → Assert → Teardown |
+| **Four-Phase Test** | Arrange â†’ Act â†’ Assert â†’ Teardown |
 | **Test Double** | stand-in for a real dependency; includes stubs, mocks, fakes, spies, dummies |
 | **Stub** | returns canned responses; used to control indirect inputs |
 | **Mock** | verifies interactions (method calls, arguments, counts) |
@@ -158,14 +161,13 @@ When you encounter a smell, treat it as a signal that the code wants to be refac
 | **Lazy Class** | a class that doesn't do enough to justify its existence |
 | **Speculative Generality** | code written for a future that never came; remove it |
 | **Temporary Field** | field only set in some circumstances; clarify or extract |
-| **Message Chains** | `a.getB().getC().getD()` — violates Law of Demeter |
+| **Message Chains** | `a.getB().getC().getD()`: violates Law of Demeter |
 | **Middle Man** | a class that only delegates; remove or inline it |
 | **Shotgun Surgery** | one change requires edits in many classes; consolidate |
 | **Divergent Change** | one class changes for many different reasons; split it (SRP) |
 | **Data Class** | class with only fields and getters/setters; give it behavior |
 | **Refused Bequest** | subclass ignores inherited methods; reconsider the hierarchy |
 | **Comments** | a comment that explains confusing code; refactor the code instead |
-
 
 ## Refactoring Techniques
 
@@ -213,7 +215,7 @@ Reference: *Refactoring* (Fowler, 2nd ed.).
 | **Slide Statements** | move related statements together to make the code easier to extract |
 | **Split Loop** | split a loop that does two things into two loops, each doing one thing |
 | **Replace Loop with Pipeline** | replace a loop with a pipeline operation such as filter or map |
-| **Remove Dead Code** | delete unused code outright — version control remembers it |
+| **Remove Dead Code** | delete unused code outright: version control remembers it |
 
 ### Organizing Data
 
@@ -266,6 +268,7 @@ Reference: *Refactoring* (Fowler, 2nd ed.).
 | **Collapse Hierarchy** | merge a superclass and subclass when they are no longer different enough |
 | **Replace Subclass with Delegate** | replace inheritance with a delegate object to avoid coupling to a hierarchy |
 | **Replace Superclass with Delegate** | replace inheritance with composition when the superclass is not a true generalization |
+
 ## Pattern Literature
 
 | Book | Authors | Focus |

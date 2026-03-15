@@ -79,7 +79,7 @@ A task is done when:
 Refactoring MUST be done as a separate step from feature work.
 
 - Confirm tests exist before refactoring.
-- Make structural changes only — behavior MUST NOT change.
+- Make structural changes only: behavior MUST NOT change.
 - Run tests after every refactoring step.
 - If tests break during refactoring, stop and diagnose before continuing.
 
