@@ -15,7 +15,7 @@ This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, th
 - Small functions.
 - Meaningful names; no single-letter variables outside loop counters unless they are in common use in mathematics, computer science, physics or engineering.
 
-## Comments Policy
+## Comments policy
 
 ### Default: no comments
 
@@ -33,12 +33,14 @@ If a comment conflicts with the code, fix the comment.
 
 ## Naming
 
+Examples use Java and C syntax; adapt conventions to your language.
+
 | Thing | Style |
 |-------|-------|
 | Classes / types / interfaces / records | `PascalCase` |
 | Methods / functions / locals / parameters | `camelCase` |
 | Enum values | `camelCase` (not `ALL_CAPS`) |
-| Constants (`static final`) | `camelCase` (not `ALL_CAPS`) |
+| Constants (`int const i=42;`) | `camelCase` (not `ALL_CAPS`) |
 | Files | match the primary class/type they contain |
 | Test classes | name must end with `TestCase` |
 | Test methods | describe the scenario and should start with test: `testPlaceStone_reducesEnemyLiberties` |
@@ -78,7 +80,7 @@ Fields at the top are not allowed. The file should read top-down like an executi
 
 ## Tests
 
-### Tests as Specification
+### Tests as specification
 
 Tests are the functional spec: behavioral documentation MUST live in tests, not in prose comments.
 
@@ -106,15 +108,19 @@ If you violate this spec, you MUST do one of:
 
 Recurring exceptions indicate the spec needs updating.
 
-## Utilities
+## Dead code
 
-- Utilities must be dependency-light and general-purpose.
-- Project-specific logic must NOT be placed in util packages.
-- If a utility depends on model/parser/UI types, it is not a utility.
+Dead code SHOULD NOT remain in the repository.
+
+Agents SHOULD remove code that is unreachable, unused, or commented out when it is clearly safe to do so.
+
+Agents MAY retain code that appears unused when there is a documented reason (for example: public API compatibility, planned work, experiments, or debugging scaffolding).
+
+When dead code is intentionally retained, agents SHOULD add a short comment explaining why.
 
 ## Agent rules
 
-Agents must ask before:
+Agents MUST ask before:
 
 - refactoring
 - changing public APIs or interfaces
@@ -123,3 +129,10 @@ Agents must ask before:
 Agents MUST NOT:
 
 - delete code without explaining why
+
+## Utilities
+
+- Utilities must be dependency-light and general-purpose.
+- Project-specific logic must NOT be placed in util packages.
+- If a utility depends on model/parser/UI types, it is not a utility.
+

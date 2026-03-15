@@ -13,7 +13,7 @@ These principles and practices SHOULD be applied by default. Deviation MUST be a
 
 Prefer named patterns over ad hoc solutions. If code feels shapeless, it likely maps to a pattern: find it.
 
-## Code Conflicts
+## Code conflicts
 
 <!-- not sure about these -->
 If code conflicts with this spec, either:
@@ -83,7 +83,7 @@ If a dependency is added, it MUST be justified by:
 - Public APIs are stable once released; breaking changes require a major version bump.
 - Internal APIs may change freely.
 
-## Object-Oriented Design Principles
+## Object-oriented design principles
 
 - **SRP** (Single Responsibility): a class has one reason to change.
 - **OCP** (Open/Closed): open for extension, closed for modification.
@@ -98,7 +98,7 @@ If a dependency is added, it MUST be justified by:
 - **Composition over inheritance**: prefer assembling behavior from small collaborators over deep class hierarchies.
 
 
-## Functional Programming Principles
+## Functional programming principles
 
 - **Pure functions**: given the same inputs, always return the same output with no side effects.
 - **Immutability**: prefer values that cannot change; transform rather than mutate.
@@ -107,7 +107,7 @@ If a dependency is added, it MUST be justified by:
 - **Avoid side effects**: isolate I/O and mutation at the edges; keep the core logic pure.
 - **Higher-order functions**: functions that take or return other functions enable reuse without inheritance.
 
-## Domain-Driven Design (DDD) Principles
+## Domain-driven design (DDD) principles
 
 Reference: *Domain-Driven Design* (Evans).
 
@@ -120,7 +120,7 @@ Reference: *Domain-Driven Design* (Evans).
 - **Repository**: abstracts persistence; the domain works with in-memory collections, not SQL.
 - **Anti-Corruption Layer**: translates between your model and an external system's model to prevent leakage.
 
-## Security Principles
+## Security principles
 
 - **Least privilege**: grant only the permissions needed to do the job, nothing more.
 - **Defense in depth**: layer multiple independent controls; do not rely on a single safeguard.

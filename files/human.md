@@ -1,15 +1,15 @@
-> Purpose: Describe how Ray thinks about software engineering so collaborators and AI assistants can work effectively with him.
+> Purpose: Describe how the juman thinks about software engineering so collaborators and AI assistants can work effectively with him.
 > Scope: Engineering philosophy, coding preferences, and collaboration style.
 
 ## Identity
 
-Ray is a highly experienced programmer with roughly six decades of programming experience with a variety of computers, languages, and operating systems.
+The human is a highly experienced programmer with roughly six decades of programming experience with a variety of computers, languages, and operating systems.
 
 ---
 
-## Engineering Philosophy
+## Engineering philosophy
 
-Ray strongly prefers software that is:
+The human  strongly prefers software that is:
 
 - **simple**
 - **deterministic**
@@ -29,8 +29,8 @@ If something can be solved with straightforward code, that is usually the best s
 
 ## Accessibility
 
-Ray has low vision.
+The human has low vision.
 
 - Keep responses concise: avoid walls of text.
 - Prefer short paragraphs and bullet points over long prose.
-- Do not ask Ray to read large blocks of output unless necessary.
+- Do not ask the human  to read large blocks of output unless necessary.

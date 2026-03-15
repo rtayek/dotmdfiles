@@ -11,7 +11,7 @@ This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, th
 
 This process is an agile variant with a test-first mandate. Working software, verified by tests, delivered in small increments is the goal. No feature is done until it has tests. No refactor is safe without tests.
 
-## Test-First Mandate
+## Test-first mandate
 
 Agents MUST write tests before writing implementation code. The cycle is:
 
@@ -29,7 +29,6 @@ Work proceeds in small iterations. Each iteration delivers a working, tested inc
 
 ### Starting an iteration
 
-- Confirm the task is understood. If it is not, ask.
 - Identify the affected code.
 - Identify existing tests that cover the area.
 - Identify missing tests that will need to be written.
@@ -48,9 +47,8 @@ An iteration is complete when:
 - All new behavior is covered by tests.
 - All tests pass.
 - The code has been refactored and is clean.
-- No uncommented dead code has been introduced.
 
-## Definition of Done
+## Definition of done
 
 A task is done when:
 
@@ -60,6 +58,8 @@ A task is done when:
 - No regressions have been introduced.
 - The code meets the project coding standards.
 
+Agents MUST NOT mark a task done when tests are missing or failing.
+
 ## Branching
 
 - All non-trivial work MUST be done on a feature branch.
@@ -67,12 +67,15 @@ A task is done when:
 - Agents MUST NOT commit directly to `main` or `master`.
 - Branches MUST be merged only when the definition of done is satisfied.
 
+Agents MUST ask before changing the branching strategy or modifying CI pipeline configuration.
+
 ## Commit discipline
 
 - Each commit MUST represent one logical change.
 - Commit messages MUST describe the *why*, not just the *what*.
 - Agents MUST NOT commit failing tests.
 - Agents MUST NOT commit code that does not compile.
+- Agents MUST NOT suppress or delete tests to make a build pass.
 
 ## Refactoring
 
@@ -83,6 +86,8 @@ Refactoring MUST be done as a separate step from feature work.
 - Run tests after every refactoring step.
 - If tests break during refactoring, stop and diagnose before continuing.
 
+Agents MUST ask before deleting existing tests.
+
 ## Regression policy
 
 If a change causes an existing test to fail:
@@ -90,19 +95,3 @@ If a change causes an existing test to fail:
 - Stop immediately.
 - Do not proceed with other changes.
 - Diagnose and fix the regression before continuing.
-
-## Agent rules
-
-Agents MUST NOT:
-
-- Skip the failing-test step and write implementation first.
-- Merge a branch with failing tests.
-- Commit directly to `main` or `master`.
-- Suppress or delete tests to make a build pass.
-- Mark a task done when tests are missing or failing.
-
-Agents MUST ask before:
-
-- Changing the branching strategy.
-- Modifying CI pipeline configuration.
-- Deleting existing tests.

@@ -9,7 +9,7 @@ Guidelines for AI agents working in any code base.
 
 This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, those words are used in the RFC sense.
 
-If instructions in this file conflict with another file, this file takes precedence for agent behavior rules.
+This file defines the baseline agent behavior rules. Other files in the project MAY define additional agent rules scoped to their domain; those rules extend this baseline and do not conflict with it.
 
 ## Behavior
 
@@ -32,5 +32,5 @@ If instructions in this file conflict with another file, this file takes precede
 
 ## Agents should
 
-- ask when anything is unclear
-- explain non-obvious changes
+- Always ask when anything is unclear
+- Always explain non-obvious changes

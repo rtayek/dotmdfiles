@@ -5,7 +5,7 @@
 
 A reference catalog of software design patterns.
 
-## Object-Oriented Design Patterns
+## Object-oriented design patterns
 
 Reference: *Design Patterns* (Gang of Four).
 
@@ -44,7 +44,7 @@ Reference: *Design Patterns* (Gang of Four).
 | Template Method | define the skeleton of an algorithm; let subclasses fill in steps |
 | Visitor | add operations to an object structure without modifying it |
 
-## Architectural Patterns
+## Architectural patterns
 
 | Pattern | Summary |
 |---------|---------|
@@ -63,7 +63,7 @@ Reference: *Design Patterns* (Gang of Four).
 | **Outbox** | write events to a local outbox table in the same transaction as domain changes; relay them to the message broker asynchronously |
 | **Strangler Fig** | incrementally replace a legacy system by routing traffic to new components until the old system can be removed |
 
-## Enterprise Application Patterns
+## Enterprise application patterns
 
 Reference: *Patterns of Enterprise Application Architecture* (Fowler).
 
@@ -86,7 +86,7 @@ Reference: *Patterns of Enterprise Application Architecture* (Fowler).
 | **Separated Interface** | define an interface in a different package from its implementation to break dependencies |
 | **Layer Supertype** | a type that acts as the supertype for all types in its layer |
 
-## Enterprise Integration Patterns
+## Enterprise integration patterns
 
 Reference: *Enterprise Integration Patterns* (Hohpe & Woolf).
 
@@ -105,7 +105,7 @@ Reference: *Enterprise Integration Patterns* (Hohpe & Woolf).
 | **Aggregator** | collect and combine related messages into a single message |
 | **Splitter** | break a single message containing multiple items into individual messages |
 
-## Stability and Resilience Patterns
+## Stability and resilience patterns
 
 Reference: *Release It!* (Nygard).
 
@@ -119,7 +119,7 @@ Reference: *Release It!* (Nygard).
 | **Let It Crash** | allow a failed component to die cleanly and restart from a known good state |
 | **Handshaking** | let a server signal readiness to accept work; do not push more than it can handle |
 
-## Test Patterns (xUnit)
+## Test patterns (xUnit)
 
 Reference: *xUnit Test Patterns* (Meszaros).
 
@@ -138,7 +138,7 @@ Reference: *xUnit Test Patterns* (Meszaros).
 | **Behavior Verification** | assert on interactions with collaborators, not just return values |
 | **State Verification** | assert on the state of the system after the action |
 
-## Code Smells
+## Code smells
 
 Reference: *Refactoring* (Fowler).
 
@@ -162,11 +162,11 @@ When you encounter a smell, treat it as a signal that the code wants to be refac
 | **Refused Bequest** | subclass ignores inherited methods; reconsider the hierarchy |
 | **Comments** | a comment that explains confusing code; refactor the code instead |
 
-## Refactoring Techniques
+## Refactoring techniques
 
 Reference: *Refactoring* (Fowler, 2nd ed.).
 
-### Basic Refactoring
+### Basic refactoring
 
 | Technique | Summary |
 |-----------|---------|
@@ -196,7 +196,7 @@ Reference: *Refactoring* (Fowler, 2nd ed.).
 | **Remove Middle Man** | make clients call the delegate directly when delegation is the only job |
 | **Substitute Algorithm** | replace the body of a function with a cleaner algorithm |
 
-### Moving Features
+### Moving features
 
 | Technique | Summary |
 |-----------|---------|
@@ -208,9 +208,8 @@ Reference: *Refactoring* (Fowler, 2nd ed.).
 | **Slide Statements** | move related statements together to make the code easier to extract |
 | **Split Loop** | split a loop that does two things into two loops, each doing one thing |
 | **Replace Loop with Pipeline** | replace a loop with a pipeline operation such as filter or map |
-| **Remove Dead Code** | delete unused code outright: version control remembers it |
 
-### Organizing Data
+### Organizing data
 
 | Technique | Summary |
 |-----------|---------|
@@ -220,7 +219,7 @@ Reference: *Refactoring* (Fowler, 2nd ed.).
 | **Change Reference to Value** | treat an object as a value (immutable) rather than a shared reference |
 | **Change Value to Reference** | use a single shared object instead of multiple copies of the same data |
 
-### Simplifying Conditionals
+### Simplifying conditionals
 
 | Technique | Summary |
 |-----------|---------|
@@ -245,7 +244,7 @@ Reference: *Refactoring* (Fowler, 2nd ed.).
 | **Replace Error Code with Exception** | throw an exception instead of returning a special error code |
 | **Replace Exception with Precheck** | check a precondition before calling a function instead of catching its exception |
 
-### Dealing with Inheritance
+### Dealing with inheritance
 
 | Technique | Summary |
 |-----------|---------|
@@ -261,7 +260,7 @@ Reference: *Refactoring* (Fowler, 2nd ed.).
 | **Replace Subclass with Delegate** | replace inheritance with a delegate object to avoid coupling to a hierarchy |
 | **Replace Superclass with Delegate** | replace inheritance with composition when the superclass is not a true generalization |
 
-## Pattern Literature
+## Pattern literature
 
 | Book | Authors | Focus |
 |------|---------|-------|

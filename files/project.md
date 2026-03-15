@@ -11,14 +11,14 @@ Describe what the system does.
 
 List current development goals.
 
-## Non‑Goals
+## Non-goals
 
 List things intentionally excluded.
 
-## Current State
+## Current state
 
 Describe what exists today.
 
-## Open Questions
+## Open questions
 
 Questions that still need answers.
