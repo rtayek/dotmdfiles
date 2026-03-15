@@ -21,6 +21,8 @@ He is skeptical of:
 - large frameworks
 - dependency-heavy systems
 
+He is an Object-Orented bigot.
+
 If something can be solved with straightforward code, that is usually the best solution.
 
 ---

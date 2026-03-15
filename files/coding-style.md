@@ -12,7 +12,6 @@ This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, th
 ## General
 
 - Optimize for the reader: code is read far more than it is written.
-- Comment out dead code; do not delete it.
 - Small functions.
 - Meaningful names; no single-letter variables outside loop counters unless they are in common use in mathematics, computer science, physics or engineering.
 
@@ -73,7 +72,7 @@ Fields at the top are not allowed. The file should read top-down like an executi
 
 ## Visibility
 
-- Default to **package-private** for classes, methods, and fields.
+- Use the default visibility for classes, methods, and fields.
 - Public/protected is a commitment: treat it as a deliberate external API decision.
 - Fields SHOULD NOT be public unless they are final.
 

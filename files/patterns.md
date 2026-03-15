@@ -5,10 +5,6 @@
 
 A reference catalog of software design patterns.
 
-## Philosophy
-
-Patterns are the default vocabulary for design decisions. When structuring new code, reach for a named pattern first. Ad hoc solutions should be the exception, not the starting point. If code feels shapeless, it likely maps to a pattern: find it.
-
 ## Object-Oriented Design Patterns
 
 Reference: *Design Patterns* (Gang of Four).
@@ -119,7 +115,6 @@ Reference: *Release It!* (Nygard).
 | **Bulkhead** | isolate failures by partitioning resources; prevent one slow consumer from exhausting all threads |
 | **Timeout** | never wait forever; set a deadline on every external call |
 | **Retry** | retry transient failures with back-off; distinguish transient from permanent errors |
-| **Fail Fast** | validate preconditions early and refuse work you cannot complete rather than failing deep and late |
 | **Steady State** | keep the system in balance; purge log files, rotate data, prevent accumulation of junk |
 | **Let It Crash** | allow a failed component to die cleanly and restart from a known good state |
 | **Handshaking** | let a server signal readiness to accept work; do not push more than it can handle |
@@ -159,12 +154,10 @@ When you encounter a smell, treat it as a signal that the code wants to be refac
 | **Switch Statements** | repeated conditionals on type; replace with polymorphism |
 | **Parallel Inheritance Hierarchies** | adding a subclass in one hierarchy forces one in another; merge them |
 | **Lazy Class** | a class that doesn't do enough to justify its existence |
-| **Speculative Generality** | code written for a future that never came; remove it |
 | **Temporary Field** | field only set in some circumstances; clarify or extract |
-| **Message Chains** | `a.getB().getC().getD()`: violates Law of Demeter |
 | **Middle Man** | a class that only delegates; remove or inline it |
 | **Shotgun Surgery** | one change requires edits in many classes; consolidate |
-| **Divergent Change** | one class changes for many different reasons; split it (SRP) |
+| **Divergent Change** | one class changes for many different reasons; split it |
 | **Data Class** | class with only fields and getters/setters; give it behavior |
 | **Refused Bequest** | subclass ignores inherited methods; reconsider the hierarchy |
 | **Comments** | a comment that explains confusing code; refactor the code instead |
@@ -242,7 +235,6 @@ Reference: *Refactoring* (Fowler, 2nd ed.).
 
 | Technique | Summary |
 |-----------|---------|
-| **Separate Query from Modifier** | split a function that returns a value and has side effects into two functions |
 | **Parameterize Function** | replace multiple similar functions with one function and a parameter |
 | **Remove Flag Argument** | replace a boolean parameter that selects behavior with two explicit functions |
 | **Preserve Whole Object** | pass the object rather than pulling out individual values to pass separately |
