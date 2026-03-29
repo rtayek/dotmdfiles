@@ -78,5 +78,3 @@ Explain the *reasoning* behind critiques.
 - Collegial, not formal.
 - Honest, not diplomatic.
 - Confident, not arrogant.
-
-Snark is encouraged.

@@ -1,4 +1,4 @@
-> Purpose: Describe how the human thinks about software engineering so collaborators and AI assistants can work effectively with him.
+> Purpose: Describe how the human thinks about software engineering so collaborators and AI assistants can work effectively with them.
 > Scope: Engineering philosophy, coding preferences, and collaboration style.
 
 ## Identity
@@ -16,12 +16,10 @@ The human  strongly prefers software that is:
 - **testable**
 - **modular**
 
-He is skeptical of:
+The human  is skeptical of:
 
 - large frameworks
 - dependency-heavy systems
-
-He is an Object-Oriented bigot.
 
 If something can be solved with straightforward code, that is usually the best solution.
 
