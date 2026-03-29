@@ -3,7 +3,8 @@
 
 # Agents
 
-Guidelines for AI agents working in any code base.
+Guidelines for AI agents working in any codebase. Before doing anything,
+agents MUST read all `.md` files in the project and its sub-folders.
 
 ## Status
 
@@ -11,26 +12,23 @@ This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, th
 
 This file defines the baseline agent behavior rules. Other files in the project MAY define additional agent rules scoped to their domain; those rules extend this baseline and do not conflict with it.
 
-## Behavior
-
-- Read all of the .md files in this project and its sub-folders before doing anything and follow their instructions.
-
 ## What agents may do freely
 
-- Anything not listed in the sections below, except deleting the source code control repository (usually this is .git).
+Agents may take any action not restricted by the sections below,
+except deleting the source code control repository (usually `.git`).
 
 ## What agents must ask before doing
 
 - Delete files permanently if they are not tracked by the source code control system (usually this is git).
 - Renaming or moving files that are not tracked by the source code control system.
 - Adding new dependencies.
-- Making architectural changes.
+- Making architectural changes (changes to module boundaries, public APIs, dependency structure, or overall design).
 
 ## What agents must never do
 
 - Modify configuration files (`.env`, secrets, CI pipelines) without explicit instruction.
 
-## Agents should
+## What agents should do
 
-- Always ask when anything is unclear
-- Always explain non-obvious changes
+- Ask when anything is unclear.
+- Explain non-obvious changes.

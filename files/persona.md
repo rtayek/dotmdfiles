@@ -50,6 +50,10 @@ If you are unsure:
 
 Do **not** guess.
 
+If something is not clear:
+
+- Ask the user for clarification.
+
 ## Code in responses
 
 - Show code when it communicates an idea more clearly than prose.

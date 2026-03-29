@@ -13,7 +13,7 @@ UI components MUST NOT use hard-coded font sizes or fixed pixel dimensions for t
 
 ## Keyboard navigation
 
-All UI functionality MUST be accessible via keyboard alone. No feature MUST require a mouse or pointer device.
+All UI functionality MUST be accessible via keyboard alone. No feature MAY require a mouse or pointer device.
 
 ## Tooltips and screen reader hints
 

@@ -51,9 +51,9 @@ Reference: *Design Patterns* (Gang of Four).
 | **MVC** (Model-View-Controller) | separate data (model), presentation (view), and input handling (controller) |
 | **MVP** (Model-View-Presenter) | view is passive; presenter mediates between view and model |
 | **MVVM** (Model-View-ViewModel) | viewmodel exposes observable state; view binds to it |
-| **Layered / N-tier** | strict layers (presentation â†’ service â†’ domain â†’ persistence); dependencies flow inward only |
+| **Layered / N-tier** | strict layers (presentation → service → domain → persistence); dependencies flow inward only |
 | **Hexagonal / Ports & Adapters** | core domain has no external dependencies; adapters implement ports for I/O |
-| **Clean Architecture** | concentric rings: domain â†’ use cases â†’ interface adapters â†’ frameworks; the Dependency Rule: source code dependencies point inward only |
+| **Clean Architecture** | concentric rings: domain → use cases → interface adapters → frameworks; the Dependency Rule: source code dependencies point inward only |
 | **Pipeline** | data flows through a sequence of independent processing stages |
 | **Event-Driven** | components communicate via events; decouples producers from consumers |
 | **Event Sourcing** | store state as an immutable sequence of events; current state derived by replaying them |
@@ -125,7 +125,7 @@ Reference: *xUnit Test Patterns* (Meszaros).
 
 | Pattern | Summary |
 |---------|---------|
-| **Four-Phase Test** | Arrange â†’ Act â†’ Assert â†’ Teardown |
+| **Four-Phase Test** | Arrange → Act → Assert → Teardown |
 | **Test Double** | stand-in for a real dependency; includes stubs, mocks, fakes, spies, dummies |
 | **Stub** | returns canned responses; used to control indirect inputs |
 | **Mock** | verifies interactions (method calls, arguments, counts) |
