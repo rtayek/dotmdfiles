@@ -1,5 +1,5 @@
 > Purpose: Code style conventions that apply to all languages.
-> Scope: Naming, formatting, layout, visibility, tests, build, and utilities.
+> Scope: Naming, formatting, layout, visibility, and utilities.
 
 # Coding Style
 
