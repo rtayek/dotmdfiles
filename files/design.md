@@ -83,6 +83,10 @@ If a dependency is added, it MUST be justified by:
 - Public APIs are stable once released; breaking changes require a major version bump.
 - Internal APIs may change freely.
 
+## Paterns
+
+- Prefer named patterns over ad hoc solutions. Apply the literature: GoF, Fowler (Refactoring, PoEAA), Evans, Meszaros, Nygard. Treat code smells as refactoring signals."
+
 ## Object-oriented design principles
 
 - **SRP** (Single Responsibility): a class has one reason to change.
