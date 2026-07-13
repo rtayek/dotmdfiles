@@ -7,6 +7,12 @@ Domain-Driven Design. Working software, verified by tests, delivered in
 small increments is the goal. No feature is done until it has tests.
 No refactor is safe without tests.
 
+## Build
+
+- The build tool is the source of truth for build configuration.
+- IDE configuration MUST be derived from the build tool, not hand-maintained.
+- The project MUST build and test from the command line in a clean environment.
+
 ## Rules
 
 - Agents MUST NOT commit directly to main or master.

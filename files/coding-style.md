@@ -93,11 +93,7 @@ Use xUnit Test Patterns liberally.
 - If tests write files, write into an isolated temp directory and clean up afterward.
 - All new code must compile and pass existing tests.
 
-## Build
 
-- The build tool is the source of truth for build configuration.
-- IDE configuration MUST be derived from the build tool, not hand-maintained.
-- The project MUST build and test from the command line in a clean environment.
 
 ## Spec violations
 
