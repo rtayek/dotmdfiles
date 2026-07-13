@@ -7,6 +7,22 @@ Domain-Driven Design. Working software, verified by tests, delivered in
 small increments is the goal. No feature is done until it has tests.
 No refactor is safe without tests.
 
+## Tests
+
+### Tests as specification
+
+Tests are the functional spec: behavioral documentation MUST live in tests, not in prose comments.
+
+Use xUnit Test Patterns liberally.
+
+- If behavior changes, tests MUST change.
+- One assertion concept per test.
+- Tests must be deterministic: no random data without a fixed seed, no wall-clock time, no network, no environment-specific paths, no reliance on test order.
+- Cover the happy path, boundary conditions, and expected error cases.
+- If tests write files, write into an isolated temp directory and clean up afterward.
+- All new code must compile and pass existing tests.
+
+
 ## Build
 
 - The build tool is the source of truth for build configuration.

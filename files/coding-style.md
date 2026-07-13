@@ -78,22 +78,6 @@ Fields at the top are not allowed. The file should read top-down like an executi
 - Public/protected is a commitment: treat it as a deliberate external API decision.
 - Fields SHOULD NOT be public unless they are final.
 
-## Tests
-
-### Tests as specification
-
-Tests are the functional spec: behavioral documentation MUST live in tests, not in prose comments.
-
-Use xUnit Test Patterns liberally.
-
-- If behavior changes, tests MUST change.
-- One assertion concept per test.
-- Tests must be deterministic: no random data without a fixed seed, no wall-clock time, no network, no environment-specific paths, no reliance on test order.
-- Cover the happy path, boundary conditions, and expected error cases.
-- If tests write files, write into an isolated temp directory and clean up afterward.
-- All new code must compile and pass existing tests.
-
-
 
 ## Spec violations
 
