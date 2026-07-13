@@ -1,25 +1,12 @@
-> Purpose: Software design principles, goals, and architecture guidelines.
-> Scope: OO, functional, DDD, security, and performance principles.
+> Purpose: Software design principles and goals.
+> Scope: Design defaults for all projects.
 
 # Design
 
 ## Status
 
-This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, those words are used in the RFC sense.
-
-## Philosophy
-
-These principles and practices SHOULD be applied by default. Deviation MUST be accompanied by a brief justification in a comment or commit message.
-
-Prefer named patterns over ad hoc solutions. If code feels shapeless, it likely maps to a pattern: find it.
-
-## Code conflicts
-
-<!-- not sure about these -->
-If code conflicts with this spec, either:
-
-- fix the code, or
-- update this spec and *then* fix the code.
+This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**,
+those words are used in the RFC sense.
 
 ## Goals
 
@@ -33,115 +20,31 @@ Optimize for:
 
 ## Principles
 
-- **Simple over clever**: prefer the straightforward solution even if a fancier one exists.
-- **Immutability by default**: make things mutable only when there is a clear reason.
-- **Small surfaces**: keep public APIs minimal; it is easier to add than to remove.
+- **Simple over clever**: prefer the straightforward solution.
+- **Immutability by default**: mutable only with a clear reason.
+- **Small surfaces**: keep public APIs minimal; easier to add than remove.
 - **Fail loudly**: validate inputs at boundaries; throw descriptive exceptions early.
-- **Separation of concerns**: data structures, business logic, and I/O live in separate layers.
+- **Separation of concerns**: data, business logic, and I/O in separate layers.
 - **Lossless first**: never drop information at format boundaries.
-- **Actions over commands**: parse first, apply later.
 
-## Structure
-
-```
-src/
-test/
-resources/
-```
+Apply the standard literature by default: SOLID, DDD (Evans), design patterns
+(GoF, Fowler), test patterns (Meszaros), resilience patterns (Nygard).
+Prefer named patterns over ad hoc solutions. Treat code smells as
+refactoring signals. Deviation MUST be accompanied by a brief justification.
 
 ## Dependencies
 
-The project SHOULD prefer:
-
-- small, well-scoped libraries
-
-The project SHOULD avoid:
-
-- heavy frameworks
-- deep transitive dependency graphs
-- libraries that force architectural coupling
-
-If a dependency is added, it MUST be justified by:
-
-- a clear need, and
-- a net reduction in code complexity.
+Prefer small, well-scoped libraries. Avoid heavy frameworks and deep
+transitive dependency graphs. A new dependency MUST be justified by a clear
+need and a net reduction in complexity.
 
 ## Error handling
 
-- Use exceptions (or Result types) for conditions the caller must handle.
-- Use assertions for invariants that should never be violated.
+- Exceptions (or Result types) for conditions the caller must handle.
+- Assertions for invariants that should never be violated.
 - Never swallow exceptions silently.
 
 ## Concurrency
 
 - Prefer immutable, shared-nothing designs.
 - Document every class that is or is not thread-safe.
-- Synchronize at the highest level that makes sense, not inside every method.
-
-## Versioning
-
-- Public APIs are stable once released; breaking changes require a major version bump.
-- Internal APIs may change freely.
-
-## Paterns
-
-- Prefer named patterns over ad hoc solutions. Apply the literature: GoF, Fowler (Refactoring, PoEAA), Evans, Meszaros, Nygard. Treat code smells as refactoring signals."
-
-## Object-oriented design principles
-
-- **SRP** (Single Responsibility): a class has one reason to change.
-- **OCP** (Open/Closed): open for extension, closed for modification.
-- **LSP** (Liskov Substitution): subtypes must be substitutable for their base types.
-- **ISP** (Interface Segregation): prefer narrow, focused interfaces over fat ones.
-- **DIP** (Dependency Inversion): depend on abstractions, not concretions.
-- **DRY** (Don't Repeat Yourself): every piece of knowledge has a single authoritative representation.
-- **YAGNI** (You Aren't Gonna Need It): don't build what isn't needed yet.
-- **Law of Demeter**: talk only to immediate collaborators; avoid method-chaining across layers.
-- **Tell Don't Ask**: tell objects what to do rather than querying their state and deciding for them.
-- **CQS** (Command Query Separation): a method either changes state or returns a value, never both.
-- **Composition over inheritance**: prefer assembling behavior from small collaborators over deep class hierarchies.
-
-
-## Functional programming principles
-
-- **Pure functions**: given the same inputs, always return the same output with no side effects.
-- **Immutability**: prefer values that cannot change; transform rather than mutate.
-- **Function composition**: build complex behavior by combining small, focused functions.
-- **Referential transparency**: an expression can be replaced with its value without changing program behavior.
-- **Avoid side effects**: isolate I/O and mutation at the edges; keep the core logic pure.
-- **Higher-order functions**: functions that take or return other functions enable reuse without inheritance.
-
-## Domain-driven design (DDD) principles
-
-Reference: *Domain-Driven Design* (Evans).
-
-- **Ubiquitous Language**: use the same terms in code, tests, and conversation as the domain experts use.
-- **Bounded Context**: an explicit boundary within which a model applies; different contexts may use different models for the same concept.
-- **Entity**: an object defined by identity that persists over time (e.g. a `User` with an ID).
-- **Value Object**: an object defined by its attributes, not identity; always immutable (e.g. a `Money` or `Address`).
-- **Aggregate**: a cluster of objects treated as a unit for consistency; accessed only through the Aggregate Root.
-- **Domain Event**: something that happened in the domain that other parts of the system may care about.
-- **Repository**: abstracts persistence; the domain works with in-memory collections, not SQL.
-- **Anti-Corruption Layer**: translates between your model and an external system's model to prevent leakage.
-
-## Security principles
-
-- **Least privilege**: grant only the permissions needed to do the job, nothing more.
-- **Defense in depth**: layer multiple independent controls; do not rely on a single safeguard.
-- **Fail securely**: on error, default to the safe/closed state, not open.
-- **Validate all input**: treat all data from outside the system boundary as untrusted.
-- **Don't invent cryptography**: use well-audited libraries; never roll your own crypto.
-
-## Performance
-
-- **Measure before optimizing**: profile first; never guess where the bottleneck is.
-- **Premature optimization is the root of all evil** (Knuth): write clear code first, optimize only when necessary.
-- **Amdahl's Law**: the speedup from parallelizing a task is limited by its sequential fraction.
-- **Cache thoughtfully**: caching adds correctness risk; only cache when profiling justifies it.
-
-## To be decided
-
-<!-- Add open design questions here as the project evolves -->
-- [ ] Persistence strategy
-- [ ] Logging approach
-- [ ] Configuration format
