@@ -17,19 +17,12 @@ This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, th
 
 ## Comments policy
 
-### Default: no comments
-
-The code is the documentation. Comments MUST be minimal.
-
-A comment is allowed only if it adds information NOT already present in code, such as:
+Code is the documentation; comments MUST be minimal. Allowed only for:
 
 - non-obvious invariants
 - tricky algorithm reasoning
 - format/protocol explanations
 - references to external specs
-
-"Explaining what the code is doing" is not permitted.
-If a comment conflicts with the code, fix the comment.
 
 ## Naming
 
@@ -90,13 +83,9 @@ Recurring exceptions indicate the spec needs updating.
 
 ## Dead code
 
-Dead code SHOULD NOT remain in the repository.
-
-Agents SHOULD remove code that is unreachable, unused, or commented out when it is clearly safe to do so.
-
-Agents MAY retain code that appears unused when there is a documented reason (for example: public API compatibility, planned work, experiments, or debugging scaffolding).
-
-When dead code is intentionally retained, agents SHOULD add a short comment explaining why.
+- Agents SHOULD remove unreachable, unused, or commented-out code when clearly safe.
+- Retaining apparently-unused code requires a short documented reason (for
+  example: public API compatibility, planned work, debugging scaffolding).
 
 ## Agent rules
 
