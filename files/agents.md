@@ -4,13 +4,12 @@
 # Agents
 
 Guidelines for AI agents working in any codebase. Before doing anything,
-agents MUST read all `.md` files in the project and its sub-folders.
+agents MUST read all `.md` files at the project root and in folders you
+work in.
 
 ## Status
 
 This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, those words are used in the RFC sense.
-
-This file defines the baseline agent behavior rules. Other files in the project MAY define additional agent rules scoped to their domain; those rules extend this baseline and do not conflict with it.
 
 ## What agents may do freely
 

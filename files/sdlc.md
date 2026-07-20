@@ -1,4 +1,11 @@
+> Purpose: Defines the development process for agents.
+> Scope: Testing, build, and delivery rules.
+
 # SDLC
+
+## Status
+
+This document is normative. Where it uses **MUST / MUST NOT / SHOULD / MAY**, those words are used in the RFC sense.
 
 ## Philosophy
 
@@ -8,8 +15,6 @@ small increments is the goal. No feature is done until it has tests.
 No refactor is safe without tests.
 
 ## Tests
-
-### Tests as specification
 
 Tests are the functional spec: behavioral documentation MUST live in tests, not in prose comments.
 
