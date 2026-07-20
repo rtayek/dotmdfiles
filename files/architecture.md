@@ -3,11 +3,8 @@
 
 # Architecture
 
-Layers, top to bottom: UI → Application → Core → Infrastructure.
-
-- Dependencies point downward only: UI → Application → Core; Infrastructure → Core.
-- Core knows nothing above it. No circular dependencies.
+- Dependencies point downward only, layer to layer. No circular dependencies.
+- Core knows nothing above it.
 - Cross layers with simple, preferably immutable boundary data; don't leak
   infrastructure types upward.
-- Put code in the lowest layer that can own it. No business logic in UI;
-  no technical wiring in Core.
+- Put code in the lowest layer that can own it.
