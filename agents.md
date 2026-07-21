@@ -26,7 +26,7 @@ The files in `files/` are **prototypes**, not active instructions. Do not follow
 
 ## What agents must ask before doing
 
-- Renaming or moving files.
+- Renaming, editing  or moving files.
 
 ## What agents must never do
 

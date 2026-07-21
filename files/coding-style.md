@@ -61,7 +61,7 @@ Every class MUST follow this ordering:
 7. instance fields (at the bottom)
 8. static fields (at the bottom)
 
-Place static methods after instance methods.
+Place static methods after instance methods, before `main`. `main` is the last method before the fields.
 
 Fields at the top are not allowed. The file should read top-down like an execution narrative.
 
@@ -70,7 +70,6 @@ Fields at the top are not allowed. The file should read top-down like an executi
 - Use the default visibility for classes, methods, and fields.
 - Public/protected is a commitment: treat it as a deliberate external API decision.
 - Fields SHOULD NOT be public unless they are final.
-
 
 ## Spec violations
 
@@ -104,4 +103,3 @@ Agents MUST NOT:
 - Utilities must be dependency-light and general-purpose.
 - Project-specific logic must NOT be placed in util packages.
 - If a utility depends on model/parser/UI types, it is not a utility.
-

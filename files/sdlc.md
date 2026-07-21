@@ -27,16 +27,22 @@ Use xUnit Test Patterns liberally.
 - If tests write files, write into an isolated temp directory and clean up afterward.
 - All new code must compile and pass existing tests.
 
-
 ## Build
 
 - The build tool is the source of truth for build configuration.
 - IDE configuration MUST be derived from the build tool, not hand-maintained.
 - The project MUST build and test from the command line in a clean environment.
 
+## Delivery
+
+- Deliver in small, independently deployable increments.
+- Every commit MUST leave the build green.
+- Use feature flags or branch-by-abstraction for incomplete work that must merge early.
+- Versioning and release notes MUST be generated from the build tool and commit history, not hand-maintained.
+
 ## Rules
 
-- Agents MUST NOT commit directly to main or master.
+- Agents MUST NOT commit directly to the main branch.
 - Agents MUST NOT suppress or delete tests to make a build pass.
 - Agents MUST ask before deleting existing tests.
 - If a change breaks an existing test, stop and fix the regression
