@@ -2,6 +2,8 @@
 
 A collection of prototype `.md` files for use  in software projects.
 
+This project defines reusable Markdown-based extraction prompts, templates, and filing rules for turning chats into compact, durable, LLM-routable project memory; the resulting memory files live with the projects they describe.
+
 ## Usage
 
 1. Copy the relevant files into your project.
