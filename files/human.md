@@ -20,3 +20,7 @@ Low vision.
 - Keep responses concise: avoid walls of text.
 - Prefer short paragraphs and bullet points over long prose.
 - Do not ask the human to read large blocks of output unless necessary.
+
+## Scripts
+
+Prefers Bourne shell scripts.

@@ -47,3 +47,7 @@ Use xUnit Test Patterns liberally.
 - Agents MUST ask before deleting existing tests.
 - If a change breaks an existing test, stop and fix the regression
   before continuing.
+
+## Adversarial audit
+
+For high-risk changes, have a second agent (or a second pass) try to break the code with new edge-case tests — nulls, boundaries, malformed input — before calling it done.
