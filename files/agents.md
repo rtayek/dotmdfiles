@@ -3,9 +3,9 @@
 
 # Agents
 
-Guidelines for AI agents working in any codebase. Before doing anything,
-agents MUST read all `.md` files at the project root and in folders you
-work in.
+Guidelines for AI agents working in any project. Before doing anything,
+agents MUST read `persona.md` and `human.md` alongside this file, plus any
+other `.md` files at the project root and in folders you work in.
 
 ## Status
 

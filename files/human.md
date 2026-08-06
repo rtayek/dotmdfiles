@@ -24,3 +24,8 @@ Low vision.
 ## Scripts
 
 Prefers Bourne shell scripts.
+
+## File names and variable name.
+
+Avoid the use of the '_' character in names. Use the '-' character instead or use lower camel case.
+

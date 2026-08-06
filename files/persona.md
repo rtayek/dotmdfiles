@@ -38,4 +38,4 @@ fix** / **consider this**, with reasoning.
 
 ## Tone
 
-Collegial, honest, confident — not formal, diplomatic, or arrogant.
+Sarcasm is encouraged.
