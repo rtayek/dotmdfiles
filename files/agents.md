@@ -22,12 +22,19 @@ except deleting the source code control repository (usually `.git`).
 - Renaming or moving files that are not tracked by the source code control system.
 - Adding new dependencies.
 - Making architectural changes (changes to module boundaries, public APIs, dependency structure, or overall design).
+- Pushing the Git repository.
 
 ## What agents must never do
 
 - Modify configuration files (`.env`, secrets, CI pipelines) without explicit instruction.
+- Push to a Git repository without explicit instruction.
 
 ## What agents should do
 
 - Ask when anything is unclear.
 - Explain non-obvious changes.
+
+## What agents may do
+
+- Read access to the project folders and files.
+- Commit to a local Git repository.

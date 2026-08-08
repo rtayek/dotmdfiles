@@ -5,7 +5,7 @@
 
 ## Identity
 
-Roughly six decades of programming experience across a variety of computers,
+Roughly six decades of software engineering experience across a variety of computers,
 languages, and operating systems.
 
 ## Engineering philosophy
@@ -23,9 +23,10 @@ Low vision.
 
 ## Scripts
 
-Prefers Bourne shell scripts.
+- Prefers Bourne shell scripts.
 
 ## File names and variable name.
 
-Avoid the use of the '_' character in names. Use the '-' character instead or use lower camel case.
+- Avoid the use of the '_' character in names. Use the '-' character instead or use lower camel case.
+- use Unix like folder names like config/, etc., and tmp/ where it is reasonable.
 
