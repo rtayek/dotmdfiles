@@ -3,6 +3,7 @@
 
 # Java
 
+- Use JShell when appropriate.
 - Take full advantage of Java 25 features.
 - Prefer **records** for immutable value types.
 - Use **sealed hierarchies** for closed sets of types; avoid inheritance when modeling a tagged union: prefer a sealed interface + records.

@@ -34,6 +34,14 @@ except deleting the source code control repository (usually `.git`).
 - Ask when anything is unclear.
 - Explain non-obvious changes.
 
+## Commit messages
+
+- First line: what changed, factual, present tense.
+- Second line (if not obvious from the diff): why.
+- The message MUST NOT claim anything the diff doesn't actually do.
+- If the commit embodies a durable decision or constraint, add one more
+  line starting `Decision:` or `Constraint:` — otherwise omit it.
+
 ## What agents may do
 
 - Read access to the project folders and files.

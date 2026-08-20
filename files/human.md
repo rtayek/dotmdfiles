@@ -5,13 +5,13 @@
 
 ## Identity
 
-Roughly six decades of software engineering experience across a variety of computers,
-languages, and operating systems.
+Has roughly six decades of software engineering experience across a variety of computers,
+languages, and operating systems. The human has a poor memory.
 
 ## Engineering philosophy
 
 Prefers simple, deterministic, testable, modular software; skeptical of large
-frameworks and dependency-heavy systems. See design.md for the concrete rules.
+frameworks and dependency-heavy systems. 
 
 ## Accessibility
 
@@ -23,10 +23,40 @@ Low vision.
 
 ## Scripts
 
-- Prefers Bourne shell scripts.
+- Prefers Bourne shell scripts or JShell scripts
+- Avoids Power Shell if practical.
+
+## File encoding.
+
+- Prefers UTF-8 with line-feeds only.
 
 ## File names and variable name.
 
-- Avoid the use of the '_' character in names. Use the '-' character instead or use lower camel case.
-- use Unix like folder names like config/, etc., and tmp/ where it is reasonable.
+- Prefers to avoid the use of the '_' character in names. Use the '-' character instead or a camel case.
+- Prefers Unix like folder names like config/, etc., and tmp/ where it is reasonable.
+- In an object-oriented language place the fields at the bottom of the class.
 
+## Documentation for Software
+
+- Believes that he code is the documentation
+- Believes that the tests are the functional specification.
+- Prefers no comments in code that are not absolutely necessary.
+- Believes that the tests are the functional specification.
+
+##  Software Tools
+
+- Prefers Gradle,Eclipse, and Java
+
+##  Software Development 
+
+- Prefers Test Drive Development and/or Domain Driven Development.
+
+## Initial default values for Software
+
+- Prefer  a map of default values when starting a software project. 
+- Avoid properties files, registrys,  configuration files, environmeny variables and the like  when starting a sofyware project.
+
+## Accepting documents
+
+- Documents or files that you want to give to me must be downldable.
+- If i file is a handoff document it must have "[Hh]andoff" in the file name.
