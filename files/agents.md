@@ -37,10 +37,9 @@ except deleting the source code control repository (usually `.git`).
 ## Commit messages
 
 - First line: what changed, factual, present tense.
-- Second line (if not obvious from the diff): why.
-- The message MUST NOT claim anything the diff doesn't actually do.
-- If the commit embodies a durable decision or constraint, add one more
-  line starting `Decision:` or `Constraint:` — otherwise omit it.
+- Message MUST NOT claim anything the change doesn't actually do.
+- If a decision was made, add: `Decision: <what, and why, briefly>`.
+- If something is still unresolved, add: `Open: <what>`.
 
 ## What agents may do
 
