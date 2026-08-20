@@ -1,0 +1,48 @@
+From 8dbe1afbfc08c2e4d9ce26f868bba96731c2ce49 Mon Sep 17 00:00:00 2001
+From: Ray <ray@local>
+Date: Thu, 20 Aug 2026 23:24:19 +0000
+Subject: [PATCH] Tighten agents.md guardrails against unrequested scope and
+ process litter
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Decision: explicitly forbid introducing new abstractions/frameworks not
+already present (even when they seem like an improvement), leaving
+background processes running, and committing scratch/cache files —
+direct response to the qwen/aider incident (unrequested CommandBus/
+ChatProviderFactory classes, stray aider processes, uncommitted cache
+litter).
+
+Open: whether this needs a matching addition to persona.md or is
+sufficient on its own.
+---
+ files/agents.md | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/files/agents.md b/files/agents.md
+index e61e1f9..bb80641 100644
+--- a/files/agents.md
++++ b/files/agents.md
+@@ -21,13 +21,17 @@ except deleting the source code control repository (usually `.git`).
+ - Delete files permanently if they are not tracked by the source code control system (usually this is git).
+ - Renaming or moving files that are not tracked by the source code control system.
+ - Adding new dependencies.
+-- Making architectural changes (changes to module boundaries, public APIs, dependency structure, or overall design).
++- Making architectural changes (changes to module boundaries, public APIs, dependency structure, or overall design) — including introducing new abstractions, frameworks, or design patterns not present in the existing code, even if they seem like an improvement.
++- Doing more than the task asked for. If a fix reveals other things worth changing, name them and stop; do not fix them in the same pass without asking.
+ - Pushing the Git repository.
+ 
+ ## What agents must never do
+ 
+ - Modify configuration files (`.env`, secrets, CI pipelines) without explicit instruction.
+ - Push to a Git repository without explicit instruction.
++- Leave background processes running after the task ends.
++- Commit scratch, cache, or tool-generated files (e.g. `.aider*`, build output, lock files not part of the project) — add them to `.gitignore` instead.
++- Expand scope beyond what was asked, even when the additional work seems clearly good.
+ 
+ ## What agents should do
+ 
+-- 
+2.43.0
+

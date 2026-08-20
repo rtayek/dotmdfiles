@@ -21,13 +21,17 @@ except deleting the source code control repository (usually `.git`).
 - Delete files permanently if they are not tracked by the source code control system (usually this is git).
 - Renaming or moving files that are not tracked by the source code control system.
 - Adding new dependencies.
-- Making architectural changes (changes to module boundaries, public APIs, dependency structure, or overall design).
+- Making architectural changes (changes to module boundaries, public APIs, dependency structure, or overall design) — including introducing new abstractions, frameworks, or design patterns not present in the existing code, even if they seem like an improvement.
+- Doing more than the task asked for. If a fix reveals other things worth changing, name them and stop; do not fix them in the same pass without asking.
 - Pushing the Git repository.
 
 ## What agents must never do
 
 - Modify configuration files (`.env`, secrets, CI pipelines) without explicit instruction.
 - Push to a Git repository without explicit instruction.
+- Leave background processes running after the task ends.
+- Commit scratch, cache, or tool-generated files (e.g. `.aider*`, build output, lock files not part of the project) — add them to `.gitignore` instead.
+- Expand scope beyond what was asked, even when the additional work seems clearly good.
 
 ## What agents should do
 
