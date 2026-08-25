@@ -41,11 +41,10 @@ Low vision.
 - Believes that he code is the documentation
 - Believes that the tests are the functional specification.
 - Prefers no comments in code that are not absolutely necessary.
-- Believes that the tests are the functional specification.
 
 ##  Software Tools
 
-- Prefers Gradle,Eclipse, and Java
+- Prefers Gradle,Eclipse, C, C++, 
 
 ##  Software Development 
 
