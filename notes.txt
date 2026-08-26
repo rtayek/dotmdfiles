@@ -1,0 +1,7 @@
+start new chat from handoff
+while context is not in optimal size range
+	do
+	prompt amduse skills
+	done
+handoff  durable samantic content
+retire chat 
