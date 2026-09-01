@@ -21,6 +21,29 @@ Low vision.
 - Prefer short paragraphs and bullet points over long prose.
 - Do not ask the human to read large blocks of output unless necessary.
 
+## Copyable text
+
+All text intended for the user to copy, including prose, code, shell
+commands, scripts, configuration, Markdown, handoffs, patches, and
+generated files, must use plain ASCII characters and LF line endings
+unless another encoding is explicitly required.
+
+Do not include:
+- control characters
+- ANSI escape sequences
+- carriage returns
+- smart quotes
+- Unicode dashes
+- Unicode arrows
+- Unicode bullets
+- box-drawing characters
+- nonbreaking spaces
+- decorative or invisible Unicode characters
+
+Use ordinary ASCII punctuation and spaces.
+
+Code and command examples must also follow these rules.
+
 ## Scripts
 
 - Prefers Bourne shell scripts or JShell scripts
