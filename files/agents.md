@@ -49,3 +49,26 @@ except deleting the source code control repository (usually `.git`).
 
 - Read access to the project folders and files.
 - Commit to a local Git repository.
+
+
+# Agent Execution and Output Protocol
+
+## Rule: Response File Rule
+Every single response provided during a session MUST also be output as a downloadable `.md` file. There are no exceptions and no judgment calls about whether a response "counts"—even a one-line answer requires a file. This functions as a general file delivery mechanism to maintain a durable, curated system-of-record local archive while treating active chats as transient scaffolding. The user decides what to do with the file, not the agent.
+
+### 1. Interface Placement Constraint
+The downloadable file element MUST always be the absolute last item rendered in the response interface. No conversational text, signatures, closing remarks, or markdown headers are permitted underneath it.
+
+### 2. File Naming Convention (Kebab-Case)
+The file must be generated with a strict kebab-case naming shape using plain text with no spaces, slashes, or colons:
+`handoff-<from-project>[-to-<to-project>]-<YYYY-MM-DD-HHMM>.md`
+
+- `<from-project>`: The active project folder identifier (e.g., `chatmap`, `hoa`). If unknown, ask exactly once at the start of the conversation. If never specified by the user, default to `misc`.
+- `-to-<to-project>`: This segment MUST only be included if the user explicitly states that the active file or context is transitioning to a second project. Otherwise, omit it entirely.
+- `<YYYY-MM-DD-HHMM>`: The 24-hour local timestamp tracking precisely when the response was generated.
+
+### 3. Content Guardrails (Strict Plain ASCII Only)
+To ensure reliable parsing by automated local file sorters, the internal text block content of the generated file MUST consist of plain ASCII characters only. The inclusion of the following characters constitutes a policy failure and is strictly forbidden:
+- Smart quotes or curly apostrophes (`“`, `”`, `‘`, `’`)
+- Em-dashes or en-dashes (`—`, `–`)
+- Non-breaking spaces, advanced formatting ligatures, or rich Unicode/UTF-8 symbols.
