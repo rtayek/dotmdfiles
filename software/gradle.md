@@ -352,3 +352,30 @@ Keep Gradle build output in build/.
 Use the Gradle wrapper's clean task for normal cleanup.
 Never change the build layout to evade a cleanup failure.
 ```
+
+## End-of-work cleanup
+
+After completing and verifying changes in a Gradle project:
+
+1. Record the test or build result.
+2. Stop any application or test process started during the work.
+3. Run:
+
+```sh
+./gradlew clean
+```
+
+4. Confirm that the project-root `build/` directory is gone.
+
+If cleanup fails, run:
+
+```sh
+./gradlew --stop
+./gradlew clean
+```
+
+If `build/` still remains, the agent is authorized to recursively delete only the exact `build/` directory directly beneath the verified Gradle project root.
+
+Report any remaining path and the exact deletion error.
+
+Do not rename or redirect Gradle’s build directory.

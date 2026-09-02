@@ -54,7 +54,7 @@ except deleting the source code control repository (usually `.git`).
 # Agent Execution and Output Protocol
 
 ## Rule: Response File Rule
-Every single response provided during a session MUST also be output as a downloadable `.md` file. There are no exceptions and no judgment calls about whether a response "counts"—even a one-line answer requires a file. This functions as a general file delivery mechanism to maintain a durable, curated system-of-record local archive while treating active chats as transient scaffolding. The user decides what to do with the file, not the agent.
+Every single response provided during a session MUST also be output as a downloadable `.md` file. There MUST be a button that will download the file or place it in  a handoff/ folder. There are no exceptions and no judgment calls about whether a response "counts"—even a one-line answer requires a file. This functions as a general file delivery mechanism to maintain a durable, curated system-of-record local archive while treating active chats as transient scaffolding. The user decides what to do with the file, not the agent.
 
 ### 1. Interface Placement Constraint
 The downloadable file element MUST always be the absolute last item rendered in the response interface. No conversational text, signatures, closing remarks, or markdown headers are permitted underneath it.
