@@ -1,5 +1,13 @@
 # Handoff: Lessons from the Dotfiles Markdown Pilot
 
+> **Status: Historical pilot report — superseded**  
+> **Marked:** 2026-09-03  
+> Retained as evidence from the dotfiles pilot, not as current project instructions.
+> Later work moved the proposed common location from `.llm/` toward `.agents/`
+> and found the linear `CLAUDE.md → AGENTS.md → index` relay unnecessarily indirect.
+> The observations below remain useful, but its prescribed layout and discovery
+> chain are not the current decision.
+
 ## Purpose
 
 This handoff feeds results from the `dotfiles` repository pilot back into the `.MD Files` project.
