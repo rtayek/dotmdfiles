@@ -1,6 +1,8 @@
 # Agents
 
-Guidelines for AI agents working in this project.
+Guidelines for AI agents working in this project. Before doing anything,
+agents MUST read `.llm/index.md` and follow its instructions. The index is the
+authoritative route to project context and repository boundaries.
 
 ## Status
 
@@ -20,15 +22,15 @@ The files in `files/` are **prototypes**, not active instructions. Do not follow
 
 ## Behavior
 
-- Read all of the .md files in the root of this folder.
-- Do not read the .md files in any sub-folders.
+- Follow `.llm/index.md` to discover active project context.
+- Treat template, specimen, software, prompt, and handoff files as inactive unless the index or current task explicitly selects them.
 - If something is unclear, say so rather than guessing.
 
 ## What agents must ask before doing
 
-- Renaming, editing  or moving files.
+- Renaming, editing or moving files.
 
 ## What agents must never do
 
 - Delete a source code control repository.
-- Delete files permanently if they are not tracked by the scource code control system..
+- Delete files permanently if they are not tracked by the source code control system.
