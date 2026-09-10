@@ -18,8 +18,8 @@ The uppercase root filenames are exceptions required by client conventions. Othe
 - `software/` - optional coding, design, architecture, SDLC, accessibility, and language guidance
 - `templates/` - reusable document scaffolding
 - `prompts/` - reusable prompts
-- `handoffs/` - working and historical transfer records
-- `.llm/` - active context for this repository itself
+- `.llm/handoffs/` - working and historical transfer records
+- `.llm/` - active context and discovery routing for this repository itself
 
 The reusable files are source material. They are not active instructions for the dotmdfiles repository unless `.llm/index.md` or the current task selects them.
 

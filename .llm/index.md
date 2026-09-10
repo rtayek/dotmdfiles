@@ -29,7 +29,7 @@ Classify artifacts independently by semantic role, authority, lifecycle, provena
 
 - `../files/` contains deployable collaboration-file sources. Their contents are not active instructions for this repository.
 - `../software/`, `../templates/`, and `../prompts/` contain reusable material, not automatically active instructions.
-- `../handoffs/` contains working and historical records. Read a handoff only when the current task makes it relevant.
+- `handoffs/` contains working and historical records. Read a handoff only when the current task makes it relevant.
 - Research specimens must remain outside automatically discovered instruction locations.
 
 ## Discovery Model
