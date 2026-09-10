@@ -1,3 +1,9 @@
+# Editor / IDE
 .project
 .settings/
+
+# Shell history
 .bash_history
+
+# Local machine config (machine-specific, not portable)
+.claude/settings.local.json
