@@ -5,13 +5,14 @@
 # Usage:
 #   setup-project.sh [target-dir] [software-file...]
 #
-# software-file names are looked up in ~/real-md-files first and then in this
+# software-file names are looked up in the real/ directory first and then in this
 # repository's software/ directory.
 
 set -euo pipefail
 
-REAL="$HOME/real-md-files"
-SOFTWARE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/software"
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+REAL="$PROJECT_ROOT/real"
+SOFTWARE_DIR="$PROJECT_ROOT/software"
 
 TARGET="${1:-.}"
 if [ "$#" -gt 0 ]; then shift; fi

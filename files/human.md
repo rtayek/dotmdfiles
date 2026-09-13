@@ -63,7 +63,7 @@ Code and command examples must also follow these rules.
 
 - Believes that he code is the documentation
 - Believes that the tests are the functional specification.
-- Prefers no comments in code that are not absolutely necessary.
+- Prefers no comments in code or shell scripts that are not absolutely necessary.
 
 ##  Software Tools
 

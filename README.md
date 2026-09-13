@@ -31,7 +31,7 @@ Deploy the shared sources after reviewing and committing changes:
 bash bin/deploy.sh
 ```
 
-This copies `files/*.md` to `~/real-md-files/`.
+This copies `files/*.md` to `real/`.
 
 Set up a project with:
 

@@ -7,3 +7,9 @@
 
 # Local machine config (machine-specific, not portable)
 .claude/settings.local.json
+
+# Deployed target
+real/
+
+# Swap files
+*.swp

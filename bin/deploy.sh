@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # deploy.sh — copy the real .md files from this project's working copy
-# (files/) to ~/real-md-files, the canonical location that other projects'
+# (files/) to real/, the canonical location that other projects'
 # CLAUDE.md imports and AGENTS.md/persona.md/human.md symlinks point at.
 #
 # Run this after editing anything in files/ and committing the change here,
@@ -8,8 +8,9 @@
 
 set -euo pipefail
 
-SOURCE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/files"
-DEST="real"
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SOURCE="$PROJECT_ROOT/files"
+DEST="$PROJECT_ROOT/real"
 
 if [ ! -d "$SOURCE" ]; then
   echo "No source directory at $SOURCE" >&2
