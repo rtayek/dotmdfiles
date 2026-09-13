@@ -27,8 +27,7 @@ Agents may:
 
 ## What agents must ask before doing
 
-- Delete files permanently if they are not tracked by the source code control system (usually this is git).
-- Renaming or moving files that are not tracked by the source code control system.
+- Delete, overwrite, rename, or move files permanently if they are not tracked by the source code control system.
 - Adding new dependencies.
 - Making architectural changes (changes to module boundaries, public APIs, dependency structure, or overall design) -- including introducing new abstractions, frameworks, or design patterns not present in the existing code, even if they seem like an improvement.
 - Doing more than the task asked for. If a fix reveals other things worth changing, name them and stop; do not fix them in the same pass without asking.
@@ -54,33 +53,9 @@ Agents may:
 - If a decision was made, add: `Decision: <what, and why, briefly>`.
 - If something is still unresolved, add: `Open: <what>`.
 
-## Artifact Delivery Method
+## Artifact Delivery
 
-Deliver each qualifying artifact using the first available method:
+Artifacts provided to the human must be directly placeable into the user's code project or Git repo, or be downloadable (preferring direct placement in the project/repo).
 
-1. Attach it as a downloadable file when the interface supports attachments or
-   download buttons.
-
-2. If downloads are unavailable but the agent can write files, write the
-   artifact to the first suitable writable location:
-
-   - a delivery directory explicitly selected by the user;
-   - an existing project `incoming/` directory;
-   - the user's `Downloads` directory;
-   - the agent's current working directory.
-
-3. After writing the file, report its exact pathname clearly.
-
-4. If neither downloading nor filesystem writing is available, provide the
-   artifact in a fenced block as a last resort.
-
-This rule grants standing permission to create new artifact files in these
-delivery locations. It does not grant permission to overwrite an existing file.
-Use a timestamp or numeric suffix to prevent collisions.
-
-Actual handoffs may be placed in an existing project `handoffs/` directory.
-Other artifacts should not be placed in `handoffs/` merely because no better
-location exists.
-
-When practical, make the download link, attachment, or written pathname the
-last item in the response so it is easy to find.
+- If writing to the project and downloads are both unsupported by the interface, provide the artifact in a fenced block.
+- Any handoff artifact MUST include '[Hh]andoff' in the filename.
