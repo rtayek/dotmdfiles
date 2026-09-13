@@ -9,7 +9,7 @@
 set -euo pipefail
 
 SOURCE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/files"
-DEST="$HOME/real-md-files"
+DEST="real"
 
 if [ ! -d "$SOURCE" ]; then
   echo "No source directory at $SOURCE" >&2
