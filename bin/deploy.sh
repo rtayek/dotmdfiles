@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # deploy.sh — copy the real .md files from this project's working copy
-# (files/) to real/, the canonical location that other projects'
-# CLAUDE.md imports and AGENTS.md/persona.md/human.md symlinks point at.
+# (files/) to real/, the canonical source for copies installed in projects.
 #
 # Run this after editing anything in files/ and committing the change here,
 # so the deployed copy stays in sync with what's checked into git.

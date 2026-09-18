@@ -50,7 +50,8 @@ AGENTS.md
 └── persona.md
 ```
 
-`CLAUDE.md` and `.llm/index.md` are project-local copies. `AGENTS.md`, `.llm/human.md`, and `.llm/persona.md` link to the shared deployed sources.
+All five files are ordinary project-local copies. Projects remain self-contained
+and do not depend on symlinks back to the dotmdfiles checkout.
 
 For a software project, name the optional guidance files to install under `.llm/`:
 

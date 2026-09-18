@@ -27,32 +27,27 @@ cd "$TARGET"
 mkdir -p .llm
 
 place() {
-  local name="$1" mode="$2" src="$3"
+  local name="$1" src="$2"
   if [ -e "$name" ] || [ -L "$name" ]; then
     echo "  skip $name (already exists)"
     return
   fi
-  if [ "$mode" = copy ]; then
-    cp "$src" "$name"
-    echo "  copied $name"
-  else
-    ln -s "$src" "$name"
-    echo "  linked $name -> $src"
-  fi
+  cp "$src" "$name"
+  echo "  copied $name"
 }
 
 echo "Setting up $(pwd):"
-place "CLAUDE.md" copy "$REAL/CLAUDE.md"
-place "AGENTS.md" link "$REAL/AGENTS.md"
-place ".llm/index.md" copy "$REAL/index.md"
-place ".llm/persona.md" link "$REAL/persona.md"
-place ".llm/human.md" link "$REAL/human.md"
+place "CLAUDE.md" "$REAL/CLAUDE.md"
+place "AGENTS.md" "$REAL/AGENTS.md"
+place ".llm/index.md" "$REAL/index.md"
+place ".llm/persona.md" "$REAL/persona.md"
+place ".llm/human.md" "$REAL/human.md"
 
 for f in "$@"; do
   if [ -f "$REAL/$f" ]; then
-    place ".llm/$f" link "$REAL/$f"
+    place ".llm/$f" "$REAL/$f"
   elif [ -f "$SOFTWARE_DIR/$f" ]; then
-    place ".llm/$f" link "$SOFTWARE_DIR/$f"
+    place ".llm/$f" "$SOFTWARE_DIR/$f"
   else
     echo "  warning: $f not found in $REAL or $SOFTWARE_DIR, skipped" >&2
   fi
