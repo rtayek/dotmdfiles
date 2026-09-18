@@ -26,10 +26,19 @@ if [ ${#files[@]} -eq 0 ]; then
   exit 0
 fi
 
-for f in "${files[@]}"; do
-  name=$(basename "$f")
-  echo "Deploying $name -> $DEST/$name"
-  cp "$f" "$DEST/$name"
+missing=0
+for f in "$@"; do
+  if [ -f "$REAL/$f" ]; then
+    place ".llm/$f" link "$REAL/$f"
+  elif [ -f "$SOFTWARE_DIR/$f" ]; then
+    place ".llm/$f" link "$SOFTWARE_DIR/$f"
+  else
+    echo "  warning: $f not found in $REAL or $SOFTWARE_DIR, skipped" >&2
+    missing=1
+  fi
 done
 
 echo "Done."
+if [ "$missing" -eq 1 ]; then
+  exit 1
+fi
