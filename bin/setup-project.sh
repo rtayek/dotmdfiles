@@ -43,6 +43,7 @@ place ".llm/index.md" "$REAL/index.md"
 place ".llm/persona.md" "$REAL/persona.md"
 place ".llm/human.md" "$REAL/human.md"
 
+missing=0
 for f in "$@"; do
   if [ -f "$REAL/$f" ]; then
     place ".llm/$f" "$REAL/$f"
@@ -50,7 +51,11 @@ for f in "$@"; do
     place ".llm/$f" "$SOFTWARE_DIR/$f"
   else
     echo "  warning: $f not found in $REAL or $SOFTWARE_DIR, skipped" >&2
+    missing=1
   fi
 done
 
 echo "Done."
+if [ "$missing" -eq 1 ]; then
+  exit 1
+fi
