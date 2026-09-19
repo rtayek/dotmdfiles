@@ -27,7 +27,8 @@ Agents may:
 
 ## What agents must ask before doing
 
-- Delete, overwrite, rename, or move files permanently if they are not tracked by the source code control system.
+- Delete files permanently if they are not tracked by the source code control system (usually this is git).
+- Renaming or moving files that are not tracked by the source code control system.
 - Adding new dependencies.
 - Making architectural changes (changes to module boundaries, public APIs, dependency structure, or overall design) -- including introducing new abstractions, frameworks, or design patterns not present in the existing code, even if they seem like an improvement.
 - Doing more than the task asked for. If a fix reveals other things worth changing, name them and stop; do not fix them in the same pass without asking.
@@ -53,9 +54,9 @@ Agents may:
 - If a decision was made, add: `Decision: <what, and why, briefly>`.
 - If something is still unresolved, add: `Open: <what>`.
 
-## Artifact Delivery
+## Artifact Delivery Method
 
-Artifacts provided to the human must be directly placeable into the user's code project or Git repo, or be downloadable (preferring direct placement in the project/repo).
+Deliver each qualifying artifact using the first available method:
 
 - If writing to the project and downloads are both unsupported by the interface, provide the artifact in a fenced block.
 - Any handoff artifact MUST include '[Hh]andoff' in the filename.

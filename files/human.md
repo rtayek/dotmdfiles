@@ -26,24 +26,55 @@ frameworks and dependency-heavy systems.
 All text intended for the user to copy—including prose, code, shell
 commands, scripts, configuration, Markdown, handoffs, patches, and
 generated files—must use UTF-8 encoding with LF line endings only.
+## Copyable text
 
-- Do not include a Byte Order Mark (BOM).
-- Avoid carriage returns (CR / CRLF).
-- Do not use emojis.
-- Avoid decorative or invisible Unicode characters, control characters, ANSI escapes, and nonbreaking spaces.
-- Despite a background in prestige quality printing and an appreciation for fine typography, avoid typographic embellishments (such as em dashes, smart quotes, or special font glyphs) in copyable artifacts to ensure reliable cross-platform copying and pasting.
+All text intended for the user to copy, including prose, code, shell
+commands, scripts, configuration, Markdown, handoffs, patches, and
+generated files, must use plain ASCII characters and LF line endings
+unless another encoding is explicitly required.
+
+Do not include:
+- control characters
+- ANSI escape sequences
+- carriage returns
+- smart quotes
+- Unicode dashes
+- Unicode arrows
+- Unicode bullets
+- box-drawing characters
+- nonbreaking spaces
+- decorative or invisible Unicode characters
+
+Use ordinary ASCII punctuation and spaces.
+
+Code and command examples must also follow these rules.
 
 ## Scripts
 
 - Prefers Bourne shell scripts or JShell scripts.
 - Avoids PowerShell if practical.
-- Dislikes Python; avoid it entirely if possible.
+- Dislikes Python; avoid it entirely if reasonable.
+
+## File encoding.
+
+- Prefers UTF-8 with line-feeds only.
 
 ## File Names, Variable Names, and Structure
+- Prefers to avoid the use of the '_' character in names. Use the '-' character instead or a camel case.
+- Prefers Unix like folder names like config/, etc., and tmp/ where it is reasonable.
+- In an object-oriented language place the fields at the bottom of the class.
+
+## Documentation for Software
 
 - Avoid the '_' character in names; use '-' or camelCase instead.
 - Prefers Unix-style directory names (e.g., config/, tmp/).
 - In object-oriented classes, place fields at the bottom of the class rather than the top.
+
+## Documentation for Software
+
+- Believes that he code is the documentation
+- Believes that the tests are the functional specification.
+- Prefers no comments in code that are not absolutely necessary.
 
 ## Documentation and Comments
 
@@ -56,11 +87,16 @@ generated files—must use UTF-8 encoding with LF line endings only.
 - Primary build tools: Gradle, Make.
 - Primary IDE: Eclipse.
 
-## Development Approach and Defaults
+## Development Approach and Defaults for Software.
 
 - Employs Test-Driven Development (TDD) and Domain-Driven Design (DDD).
 - Use an in-memory map of default values when starting a software project.
 - Avoid properties files, configuration files, registries, environment variables, and external setup until strictly necessary.
+
+# Initial default values for Software
+
+- Prefer  a map of default values when starting a software project. 
+- Avoid properties files, registrys,  configuration files, environmeny variables and the like  when starting a sofyware project.
 
 ## Accepting Artifacts
 
