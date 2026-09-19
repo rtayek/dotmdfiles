@@ -61,6 +61,25 @@ bash bin/setup-project.sh /path/to/project coding-style.md design.md architectur
 
 The setup script never overwrites an existing file.
 
+## Synchronizing existing projects
+
+Check whether the five shared files match `real/` without changing anything:
+
+```bash
+sh bin/sync-project-files.sh --check /path/to/project [/path/to/another-project ...]
+```
+
+Copy and verify the shared files deliberately:
+
+```bash
+sh bin/sync-project-files.sh --apply /path/to/project [/path/to/another-project ...]
+```
+
+The synchronizer changes only `CLAUDE.md`, `AGENTS.md`, `.llm/index.md`,
+`.llm/human.md`, and `.llm/persona.md`. It does not recursively copy `.llm/`
+and does not modify or remove any other project files. Skill-package
+synchronization, if added later, will be a separate operation.
+
 ## Working taxonomy
 
 The current broad semantic categories are:
