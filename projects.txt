@@ -1,0 +1,6 @@
+chatmap
+dotmdfiles
+money
+system
+dotfiles
+bin
