@@ -1,6 +1,7 @@
-chatmap
-dotmdfiles
-money
-system
-dotfiles
-bin
+# name|path
+chatmap|~/eclipse-workspace/chatmap
+dotmdfiles|~/eclipse-workspace/dotmdfiles
+money|~/eclipse-workspace/money
+system|~/eclipse-workspace/system
+dotfiles|~/eclipse-workspace/dotfiles
+bin|~/eclipse-workspace/bin

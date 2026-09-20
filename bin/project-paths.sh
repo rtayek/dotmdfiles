@@ -14,8 +14,8 @@ Usage:
 
 Environment:
   PROJECTS_FILE  Registry file. Defaults to dotmdfiles/projects.txt.
-  PROJECTS_ROOT  Directory containing the projects. Defaults to the parent
-                 directory of the dotmdfiles checkout.
+  PROJECTS_ROOT  Base for relative paths. Defaults to the parent directory of
+                 the dotmdfiles checkout.
 EOF
 }
 
@@ -53,16 +53,46 @@ if [ ! -d "$projects_root" ]; then
 fi
 
 missing=0
-while IFS= read -r entry || [ -n "$entry" ]; do
-    case "$entry" in
+while IFS= read -r registry_line || [ -n "$registry_line" ]; do
+    case "$registry_line" in
         ""|\#*)
             continue
             ;;
-        /*)
-            project_path=$entry
+    esac
+
+    case "$registry_line" in
+        *\|*)
+            old_ifs=$IFS
+            IFS='|'
+            read -r project_name project_value ignored_fields <<EOF
+$registry_line
+EOF
+            IFS=$old_ifs
             ;;
         *)
-            project_path=$projects_root/$entry
+            project_name=$registry_line
+            project_value=$registry_line
+            ;;
+    esac
+
+    if [ -z "$project_name" ] || [ -z "$project_value" ]; then
+        echo "Invalid project registry entry: $registry_line" >&2
+        missing=1
+        continue
+    fi
+
+    case "$project_value" in
+        "~")
+            project_path=$HOME
+            ;;
+        "~/"*)
+            project_path=$HOME/${project_value#??}
+            ;;
+        /*)
+            project_path=$project_value
+            ;;
+        *)
+            project_path=$projects_root/$project_value
             ;;
     esac
 
@@ -73,7 +103,7 @@ while IFS= read -r entry || [ -n "$entry" ]; do
     fi
 
     if [ "$mode" = names ]; then
-        printf '%s\n' "$entry"
+        printf '%s\n' "$project_name"
     else
         (CDPATH= cd "$project_path" && pwd)
     fi

@@ -63,9 +63,17 @@ The setup script never overwrites an existing file.
 
 ## Synchronizing existing projects
 
-`projects.txt` is the shared project registry. It contains one project directory
-name per line. Blank lines and lines beginning with `#` are ignored. By default,
-the projects are sibling directories of the dotmdfiles checkout.
+`projects.txt` is the shared project registry. Each entry uses `name|path`, with
+paths normally starting at the home directory:
+
+```text
+chatmap|~/eclipse-workspace/chatmap
+```
+
+Blank lines and lines beginning with `#` are ignored. Additional pipe-delimited
+fields are reserved for later project metadata such as ports, colors, and launch
+settings; the current reader ignores them. Older name-only entries remain
+supported and resolve relative to `PROJECTS_ROOT`.
 
 List the verified project paths:
 
