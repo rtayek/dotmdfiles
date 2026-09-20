@@ -7,11 +7,14 @@ set -eu
 usage() {
     cat <<'EOF'
 Usage:
-  sync-project-files.sh [--check] PROJECT...
-  sync-project-files.sh --apply PROJECT...
+  sync-project-files.sh [--check] [PROJECT...]
+  sync-project-files.sh --apply [PROJECT...]
 
 --check  Report differences without changing anything. This is the default.
 --apply  Copy the five shared files into each project, then verify them.
+
+When no PROJECT is supplied, projects are read from projects.txt through
+project-paths.sh.
 EOF
 }
 
@@ -34,11 +37,6 @@ case "${1:-}" in
         exit 2
         ;;
 esac
-
-if [ "$#" -eq 0 ]; then
-    usage >&2
-    exit 2
-fi
 
 script_dir=$(CDPATH= cd "$(dirname "$0")" && pwd)
 project_root=$(CDPATH= cd "$script_dir/.." && pwd)
@@ -90,7 +88,8 @@ sync_file() {
     echo "  copied: $display_name"
 }
 
-for target_dir do
+sync_project() {
+    target_dir=$1
     if [ ! -d "$target_dir" ]; then
         echo "Project directory does not exist: $target_dir" >&2
         exit 2
@@ -107,7 +106,27 @@ for target_dir do
     sync_file "$source_dir/index.md" "$target_dir/.llm/index.md" ".llm/index.md"
     sync_file "$source_dir/human.md" "$target_dir/.llm/human.md" ".llm/human.md"
     sync_file "$source_dir/persona.md" "$target_dir/.llm/persona.md" ".llm/persona.md"
-done
+}
+
+if [ "$#" -gt 0 ]; then
+    for target_dir do
+        sync_project "$target_dir"
+    done
+else
+    registry_list=$(mktemp "${TMPDIR:-/tmp}/sync-project-files.XXXXXX")
+    cleanup() {
+        rm -f "$registry_list"
+    }
+    trap cleanup 0 1 2 15
+
+    if ! sh "$script_dir/project-paths.sh" > "$registry_list"; then
+        exit 2
+    fi
+
+    while IFS= read -r target_dir || [ -n "$target_dir" ]; do
+        sync_project "$target_dir"
+    done < "$registry_list"
+fi
 
 if [ "$mode" = check ] && [ "$differences" -ne 0 ]; then
     exit 1

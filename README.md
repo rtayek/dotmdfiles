@@ -63,7 +63,23 @@ The setup script never overwrites an existing file.
 
 ## Synchronizing existing projects
 
-Check whether the five shared files match `real/` without changing anything:
+`projects.txt` is the shared project registry. It contains one project directory
+name per line. Blank lines and lines beginning with `#` are ignored. By default,
+the projects are sibling directories of the dotmdfiles checkout.
+
+List the verified project paths:
+
+```bash
+sh bin/project-paths.sh
+```
+
+Check every registered project without changing anything:
+
+```bash
+sh bin/sync-project-files.sh --check
+```
+
+Check only selected projects by giving their paths explicitly:
 
 ```bash
 sh bin/sync-project-files.sh --check /path/to/project [/path/to/another-project ...]
@@ -74,6 +90,10 @@ Copy and verify the shared files deliberately:
 ```bash
 sh bin/sync-project-files.sh --apply /path/to/project [/path/to/another-project ...]
 ```
+
+Omit the paths with `--apply` to update every registered project. Set
+`PROJECTS_FILE` or `PROJECTS_ROOT` to override the registry or workspace
+location.
 
 The synchronizer changes only `CLAUDE.md`, `AGENTS.md`, `.llm/index.md`,
 `.llm/human.md`, and `.llm/persona.md`. It does not recursively copy `.llm/`
