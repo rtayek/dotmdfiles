@@ -26,19 +26,15 @@ Prefers simple, deterministic, testable, modular software; skeptical of large fr
 - Avoids PowerShell if practical.
 - Avoid  Python  if practical.
 
-## File encoding.
+## File encoding
 
 - Prefers UTF-8 with line-feeds only.
 
 ## File Names, Variable Names etc.
+
 - Prefers to avoid the use of the '_' character in names. Use the '-' character instead or a camel case.
 - Prefers Unix like folder names like config/, etc., and tmp/ where it is reasonable.
 - In an object-oriented language place the fields at the bottom of the class.
-
-## Documentation for Software
-
-- Prefers Unix-style directory names (e.g., config/, tmp/).
-- In object-oriented classes, place fields at the bottom of the class rather than the top.
 
 ## Documentation for Software
 
@@ -52,17 +48,12 @@ Prefers simple, deterministic, testable, modular software; skeptical of large fr
 - Primary build tools: Gradle, Make.
 - Primary IDE: Eclipse.
 
-## Development Approach and Defaults for Software.
+## Development Approach and Defaults for Software
 
 - Employs Test-Driven Development (TDD) and Domain-Driven Design (DDD).
 - Prefers Use User Acceptance Testing (UAT) strictly to validate the human experience, usability, and business value—not to find code bugs.
 - Use an in-memory map of default values when starting a software project.
 - Avoid properties files, configuration files, registries, environment variables, and external setup until strictly necessary.
-
-# Initial default values for Software
-
-- Prefer  a map of default values when starting a software project. 
-- Avoid properties files, registrys,  configuration files, environmeny variables and the like  when starting a sofyware project.
 
 ## Accepting Artifacts
 
