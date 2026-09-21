@@ -3,5 +3,5 @@ chatmap|~/eclipse-workspace/chatmap
 dotmdfiles|~/eclipse-workspace/dotmdfiles
 money|~/eclipse-workspace/money
 system|~/eclipse-workspace/system
-dotfiles|~/eclipse-workspace/dotfiles
-bin|~/eclipse-workspace/bin
+dotfiles|~/dotfiles
+bin|~/bin
