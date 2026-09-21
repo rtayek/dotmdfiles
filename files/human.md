@@ -10,36 +10,36 @@ languages, and operating systems. The human has a poor memory.
 
 ## Engineering Philosophy
 
-Prefers simple, deterministic, testable, modular software; skeptical of large frameworks and dependency-heavy systems.
+Write simple, deterministic, testable, modular software. Avoid large frameworks and dependency-heavy systems.
 
 ## Accessibility
 
 - Low vision.
 - Hard of hearing, even with hearing aids.
 - Keep responses concise: avoid walls of text.
-- Prefer short paragraphs and bullet points over long prose.
+- Use short paragraphs and bullet points over long prose.
 - Do not ask the human to read large blocks of output unless necessary.
 
 ## Scripts
 
-- Prefers Bourne shell scripts or JShell scripts.
-- Avoids PowerShell if practical.
-- Avoid  Python  if practical.
+- Use Bourne shell scripts or JShell scripts.
+- Avoid PowerShell if practical.
+- Avoid Python if practical.
 
 ## File encoding
 
-- Prefers UTF-8 with line-feeds only.
+- Use UTF-8 with line-feeds only.
 
 ## File Names, Variable Names etc.
 
-- Prefers to avoid the use of the '_' character in names. Use the '-' character instead or a camel case.
-- Prefers Unix like folder names like config/, etc., and tmp/ where it is reasonable.
-- In an object-oriented language place the fields at the bottom of the class.
+- Avoid the '_' character in names. Use '-' or camelCase instead.
+- Use Unix-like folder names (e.g., config/, tmp/) where reasonable.
+- In object-oriented languages, place fields at the bottom of the class.
 
 ## Documentation for Software
 
-- Believes that he code is the documentation
-- Believes that the tests are the functional specification.
+- Treat the code as the documentation.
+- Treat the tests as the functional specification.
 - Avoid comments in code and shell scripts. If a comment feels necessary, fix the naming or structure instead so the intent is self-evident.
 
 ## Software Tools and Languages
@@ -50,8 +50,8 @@ Prefers simple, deterministic, testable, modular software; skeptical of large fr
 
 ## Development Approach and Defaults for Software
 
-- Employs Test-Driven Development (TDD) and Domain-Driven Design (DDD).
-- Prefers Use User Acceptance Testing (UAT) strictly to validate the human experience, usability, and business value—not to find code bugs.
+- Use Test-Driven Development (TDD) and Domain-Driven Design (DDD).
+- Use User Acceptance Testing (UAT) strictly to validate the human experience, usability, and business value—not to find code bugs.
 - Use an in-memory map of default values when starting a software project.
 - Avoid properties files, configuration files, registries, environment variables, and external setup until strictly necessary.
 
