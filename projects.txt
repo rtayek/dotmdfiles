@@ -1,7 +1,10 @@
-# name|path
-chatmap|~/eclipse-workspace/chatmap
-dotmdfiles|~/eclipse-workspace/dotmdfiles
-money|~/eclipse-workspace/money
-system|~/eclipse-workspace/system
-dotfiles|~/dotfiles
-bin|~/bin
+# name|path|port|color|chatgpt_url|claude_url
+chatmap|~/eclipse-workspace/chatmap|1033|Blue||
+dotmdfiles|~/eclipse-workspace/dotmdfiles|1032|Green||
+five-rules|~/eclipse-workspace/five-rules|1034|Cyan||
+system|~/eclipse-workspace/system|1035|Magenta||
+clipboard|~/eclipse-workspace/clipboard|1036|Yellow||
+money|~/eclipse-workspace/money|1037|Red||
+openworker-eval-2026-09-1|~/eclipse-workspace/openworker-eval-2026-09-1|1038|Green||
+dotfiles|~/dotfiles|1031|Red||
+bin|~/bin||||
