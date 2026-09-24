@@ -5,6 +5,6 @@ five-rules|~/eclipse-workspace/five-rules|1034|Cyan||
 system|~/eclipse-workspace/system|1035|Magenta||
 clipboard|~/eclipse-workspace/clipboard|1036|Yellow||
 money|~/eclipse-workspace/money|1037|Red||
-openworker-eval-2026-09-1|~/eclipse-workspace/openworker-eval-2026-09-1|1038|Green||
+openworker|~/eclipse-workspace/openworker|1038|Green||
 dotfiles|~/dotfiles|1031|Red||
 bin|~/bin||||
