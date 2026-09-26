@@ -30,10 +30,15 @@ Write simple, deterministic, testable, modular software. Avoid large frameworks 
 
 - Use UTF-8 with line-feeds only.
 
-## File Names, Variable Names etc.
+## File and Variable Names
 
-- Avoid the '_' character in names. Use '-' or camelCase instead.
-- Use Unix-like folder names (e.g., config/, tmp/) where reasonable.
+- Prefer lowercase names where practical.
+- Use lowercase with dashes for filenames, directory names, and command names.
+- In shell scripts, use lower camel case for local variables and custom environment variables.
+- Avoid underscores in names we control.
+- Preserve established external names such as `HOME`, `PATH`, and `JAVA_HOME`, and names required by tools or compatibility interfaces.
+- Apply these conventions to new and substantially edited scripts; do not mechanically rename existing code solely for style.
+- Use Unix-like folder names (e.g., `config/`, `tmp/`) where reasonable.
 - In object-oriented languages, place fields at the bottom of the class.
 
 ## Documentation for Software
