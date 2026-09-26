@@ -1,124 +1,102 @@
 # dotmdfiles
 
-A working collection of operational Markdown for LLM and agent projects. ChatMap is the current pilot for discovery, project context, metadata, and loading behavior.
+A working collection of operational Markdown for LLM and agent projects.
+ChatMap is the current pilot for discovery, project context, metadata, and
+loading behavior.
 
 ## Current discovery model
 
-Projects use two client-mandated root entry files and one repository-controlled dispatcher:
+Projects use two client-mandated root entry files and one repository-controlled
+dispatcher:
 
 ```text
 CLAUDE.md -> AGENTS.md -> .llm/index.md
 ```
 
-The uppercase root filenames are exceptions required by client conventions. Other names should be lowercase when practical.
+The uppercase root filenames are exceptions required by client conventions.
+Other names should be lowercase when practical.
 
 ## Repository areas
 
-- `files/` - deployable collaboration sources: `CLAUDE.md`, `AGENTS.md`, `index.md`, `human.md`, and `persona.md`
-- `software/` - optional coding, design, architecture, SDLC, accessibility, and language guidance
+- `files/` - deployable collaboration sources: `CLAUDE.md`, `AGENTS.md`,
+  `index.md`, `human.md`, and `persona.md`
+- `real/` - reviewed copies ready for project deployment
+- `software/` - optional software guidance
 - `templates/` - reusable document scaffolding
 - `prompts/` - reusable prompts
 - `.llm/handoffs/` - working and historical transfer records
-- `.llm/` - active context and discovery routing for this repository itself
+- `.llm/` - active context for this repository itself
 
-The reusable files are source material. They are not active instructions for the dotmdfiles repository unless `.llm/index.md` or the current task selects them.
+The reusable files are source material. They are not active instructions for
+dotmdfiles unless `.llm/index.md` or the current task selects them.
 
 ## Deployment
 
 Deploy the shared sources after reviewing and committing changes:
 
-```bash
-bash bin/deploy.sh
+```sh
+sh bin/deploy.sh
 ```
 
 This copies `files/*.md` to `real/`.
 
 Set up a project with:
 
-```bash
-bash bin/setup-project.sh /path/to/project
+```sh
+sh bin/setup-project.sh /path/to/project
 ```
 
-The setup script creates:
+The five managed files are ordinary project-local copies. Projects do not
+depend on symlinks back to the dotmdfiles checkout.
 
-```text
-CLAUDE.md
-AGENTS.md
-.llm/
-├── index.md
-├── human.md
-└── persona.md
-```
+For a software project, name optional guidance files to install under `.llm/`:
 
-All five files are ordinary project-local copies. Projects remain self-contained
-and do not depend on symlinks back to the dotmdfiles checkout.
-
-For a software project, name the optional guidance files to install under `.llm/`:
-
-```bash
-bash bin/setup-project.sh /path/to/project coding-style.md design.md architecture.md sdlc.md java.md
+```sh
+sh bin/setup-project.sh /path/to/project coding-style.md design.md architecture.md sdlc.md java.md
 ```
 
 The setup script never overwrites an existing file.
 
 ## Synchronizing existing projects
 
-`projects.txt` is the shared project registry. Each entry uses `name|path`, with
-paths normally starting at the home directory:
+The System repository owns the authoritative `projects.tsv`. Its deploy command
+installs an ordinary copy at `~/.config/ray/projects.tsv`, which dotmdfiles reads
+without depending on the System checkout.
 
-```text
-chatmap|~/eclipse-workspace/chatmap
-```
+List verified project paths:
 
-Blank lines and lines beginning with `#` are ignored. Additional pipe-delimited
-fields are reserved for later project metadata such as ports, colors, and launch
-settings; the current reader ignores them. Older name-only entries remain
-supported and resolve relative to `PROJECTS_ROOT`.
-
-List the verified project paths:
-
-```bash
+```sh
 sh bin/project-paths.sh
 ```
 
 Check every registered project without changing anything:
 
-```bash
+```sh
 sh bin/sync-project-files.sh --check
 ```
 
-Check only selected projects by giving their paths explicitly:
+Copy and verify the five shared files deliberately:
 
-```bash
-sh bin/sync-project-files.sh --check /path/to/project [/path/to/another-project ...]
+```sh
+sh bin/sync-project-files.sh --apply
 ```
 
-Copy and verify the shared files deliberately:
-
-```bash
-sh bin/sync-project-files.sh --apply /path/to/project [/path/to/another-project ...]
-```
-
-Omit the paths with `--apply` to update every registered project. Set
-`PROJECTS_FILE` or `PROJECTS_ROOT` to override the registry or workspace
-location.
+Pass project paths to either command to limit the operation. Set `projectsFile`
+or `projectsRoot` to override the defaults. The older `PROJECTS_FILE` and
+`PROJECTS_ROOT` spellings remain temporarily accepted.
 
 The synchronizer changes only `CLAUDE.md`, `AGENTS.md`, `.llm/index.md`,
 `.llm/human.md`, and `.llm/persona.md`. It does not recursively copy `.llm/`
-and does not modify or remove any other project files. Skill-package
-synchronization, if added later, will be a separate operation.
+or modify any other project files.
 
 ## Working taxonomy
 
-The current broad semantic categories are:
-
-- durable knowledge
-- instructions and governance
-- reusable capabilities
-- working state and records
-
-Artifacts are also classified independently by semantic role, authority, lifecycle, provenance, and loading or discovery behavior. This remains a working model to be revised from real project evidence.
+The current broad semantic categories are durable knowledge, instructions and
+governance, reusable capabilities, and working state and records. Artifacts are
+also classified independently by role, authority, lifecycle, provenance, and
+loading behavior.
 
 ## Placement warning
 
-Do not put an auto-discovered `CLAUDE.md` in a directory that is an ancestor of unrelated projects. Some clients inherit instructions from parent directories.
+Do not put an auto-discovered `CLAUDE.md` in a directory that is an ancestor of
+unrelated projects. Some clients inherit instructions from parent directories.

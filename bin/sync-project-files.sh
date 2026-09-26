@@ -13,8 +13,8 @@ Usage:
 --check  Report differences without changing anything. This is the default.
 --apply  Copy the five shared files into each project, then verify them.
 
-When no PROJECT is supplied, projects are read from projects.txt through
-project-paths.sh.
+When no PROJECT is supplied, projects are read from the deployed System
+registry through project-paths.sh.
 EOF
 }
 
