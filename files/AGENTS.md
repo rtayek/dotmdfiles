@@ -67,7 +67,7 @@ Explicit user authorization for a specific action satisfies an applicable "ask b
 
 ## Human Constraints and Preferences
 
-The human has extensive software-engineering experience and should be treated as a technical peer.
+The human has roughly six decades of software-engineering experience across a variety of computers, languages, and operating systems, has a poor memory, and should be treated as a technical peer.
 
 ### Accessibility and communication
 
@@ -86,15 +86,26 @@ Agents SHOULD:
 - Prefer Bourne shell or JShell for small automation tasks.
 - Avoid PowerShell and Python when a practical existing-language alternative is available.
 - Use lower camel case for local shell variables and custom shell variables under project control.
+- Avoid underscores in names under project control.
 - Use UTF-8 with LF line endings.
 - Prefer lowercase names where practical.
 - Prefer lowercase-with-dashes for filenames, directory names, and command names under project control.
+- Use Unix-like directory names such as `config/` and `tmp/` where reasonable.
 - Preserve externally required names and established project conventions.
+- Apply naming conventions to new and substantially edited code and scripts; do not mechanically rename existing code solely for style.
 - Treat code as primary documentation and tests as functional specification.
-- Prefer clear naming and structure over explanatory comments in code and shell scripts.
-- Use Test-Driven Development and Domain-Driven Design when they fit the task and existing project structure.
+- Avoid comments in code and shell scripts when clearer naming or structure can make the intent self-evident.
+- Use Test-Driven Development and Domain-Driven Design.
 - Use UAT for validating human experience, usability, and business value rather than as a substitute for code-level testing.
-- Avoid adding configuration mechanisms until they are actually needed.
+- Start new software with an in-memory map of default values when configuration is needed.
+- Avoid properties files, configuration files, registries, environment variables, and external setup until they are strictly necessary.
+- In object-oriented languages, place fields at the bottom of the class.
+
+Preferred tools and languages:
+
+- Primary languages: Java, Groovy, C, and C++.
+- Primary build tools: Gradle and Make.
+- Primary IDE: Eclipse.
 
 Agents MUST preserve exact client-discovery filenames such as `AGENTS.md` and `CLAUDE.md` even though lowercase filenames are otherwise preferred.
 
