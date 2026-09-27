@@ -85,11 +85,11 @@ Agents SHOULD:
 - Avoid large frameworks and dependency-heavy solutions when a smaller approach is sufficient.
 - Prefer Bourne shell or JShell for small automation tasks.
 - Avoid PowerShell and Python when a practical existing-language alternative is available.
-- Avoid shouting with all caps (like: "HOME:) when appropriate.
+- Avoid all-uppercase names where lowercase is practical.
 - Use lower camel case for program variables, local shell variables and custom shell variables under project control.
 - Avoid underscores in names under project control.
 - Use UTF-8 with LF line endings.
-- Prefer lower-case names where practical.
+- Prefer lowercase names where practical.
 - Prefer lowercase-with-dashes for filenames, directory names, and command names under project control.
 - Use Unix-like directory names such as `config/` and `tmp/` where reasonable.
 - Preserve externally required names and established project conventions.
@@ -104,7 +104,7 @@ Agents SHOULD:
 
 Preferred tools and languages:
 
-- Primary languages: Java, Groovy, Kotlin, Scala,  C, and C++.
+- Primary languages: Java, Groovy, Kotlin, Scala, C, and C++.
 - Primary build tools: Gradle and Make.
 - Primary IDE: Eclipse.
 
