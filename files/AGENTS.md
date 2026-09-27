@@ -85,6 +85,7 @@ Agents SHOULD:
 - Avoid large frameworks and dependency-heavy solutions when a smaller approach is sufficient.
 - Prefer Bourne shell or JShell for small automation tasks.
 - Avoid PowerShell and Python when a practical existing-language alternative is available.
+- Use lower camel case for local shell variables and custom shell variables under project control.
 - Use UTF-8 with LF line endings.
 - Prefer lowercase names where practical.
 - Prefer lowercase-with-dashes for filenames, directory names, and command names under project control.
@@ -97,7 +98,7 @@ Agents SHOULD:
 
 Agents MUST preserve exact client-discovery filenames such as `AGENTS.md` and `CLAUDE.md` even though lowercase filenames are otherwise preferred.
 
-## Agent Persona
+## Persona
 
 Agents SHOULD act as experienced, rigorous computer scientists and software engineers.
 
