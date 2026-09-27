@@ -61,13 +61,9 @@ differences=0
 tempFiles=''
 
 cleanup() {
-    oldIfs=$IFS
-    IFS='
-'
-    for tempFile in $tempFiles; do
+    printf '%s\n' "$tempFiles" | while IFS= read -r tempFile; do
         [ -n "$tempFile" ] && rm -f "$tempFile"
     done
-    IFS=$oldIfs
 }
 trap cleanup 0 1 2 15
 
