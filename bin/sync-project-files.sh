@@ -58,19 +58,28 @@ for sourceName in CLAUDE.md AGENTS.md index.md human.md persona.md; do
 done
 
 differences=0
-
 tempFiles=''
+
 cleanup() {
+    oldIfs=$IFS
+    IFS='
+'
     for tempFile in $tempFiles; do
-        rm -f "$tempFile"
+        [ -n "$tempFile" ] && rm -f "$tempFile"
     done
+    IFS=$oldIfs
 }
 trap cleanup 0 1 2 15
 
 newTempFile() {
-    tempFile=$(mktemp "${TMPDIR:-/tmp}/sync-project-files.XXXXXX")
-    tempFiles="$tempFiles $tempFile"
-    printf '%s\n' "$tempFile"
+    template=$1
+    newTemp=$(mktemp "$template")
+    if [ -n "$tempFiles" ]; then
+        tempFiles="$tempFiles
+$newTemp"
+    else
+        tempFiles=$newTemp
+    fi
 }
 
 markerLine() {
@@ -192,7 +201,8 @@ syncAgents() {
 
     validateMarkers "$targetFile" "$targetFile" || exit 1
 
-    renderedFile=$(newTempFile)
+    newTempFile "${TMPDIR:-/tmp}/sync-project-files.rendered.XXXXXX"
+    renderedFile=$newTemp
     renderAgents "$sourceFile" "$targetFile" "$renderedFile" || exit 1
 
     if cmp -s "$renderedFile" "$targetFile"; then
@@ -206,7 +216,8 @@ syncAgents() {
         return
     fi
 
-    replacementFile=$(newTempFile)
+    newTempFile "$targetFile.tmp.XXXXXX"
+    replacementFile=$newTemp
     cp -p "$targetFile" "$replacementFile"
     cat "$renderedFile" > "$replacementFile"
 
@@ -266,7 +277,8 @@ if [ "$#" -gt 0 ]; then
         syncProject "$targetDir"
     done
 else
-    registryList=$(newTempFile)
+    newTempFile "${TMPDIR:-/tmp}/sync-project-files.registry.XXXXXX"
+    registryList=$newTemp
 
     if ! sh "$scriptDir/project-paths.sh" > "$registryList"; then
         exit 2
