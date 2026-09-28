@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# setup-project.sh - install the shared discovery entry points and .llm context.
+# setup-project.sh - install the shared discovery entry points.
 # Never overwrites a file that is already present.
 #
 # Usage:
@@ -24,7 +24,6 @@ fi
 
 mkdir -p "$TARGET"
 cd "$TARGET"
-mkdir -p .llm
 
 place() {
   local name="$1" src="$2"
@@ -39,11 +38,11 @@ place() {
 echo "Setting up $(pwd):"
 place "CLAUDE.md" "$REAL/CLAUDE.md"
 place "AGENTS.md" "$REAL/AGENTS.md"
-place ".llm/index.md" "$REAL/index.md"
-place ".llm/persona.md" "$REAL/persona.md"
-place ".llm/human.md" "$REAL/human.md"
 
 missing=0
+if [ "$#" -gt 0 ]; then
+  mkdir -p .llm
+fi
 for f in "$@"; do
   if [ -f "$REAL/$f" ]; then
     place ".llm/$f" "$REAL/$f"
