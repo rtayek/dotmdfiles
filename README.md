@@ -6,20 +6,20 @@ loading behavior.
 
 ## Current discovery model
 
-Projects use two client-mandated root entry files and one repository-controlled
-dispatcher:
+Projects use two client-facing root files:
 
 ```text
-CLAUDE.md -> AGENTS.md -> .llm/index.md
+CLAUDE.md -> AGENTS.md
 ```
 
-The uppercase root filenames are exceptions required by client conventions.
-Other names should be lowercase when practical.
+`AGENTS.md` is the self-contained governing document. Its marked project-context
+block names additional project documents only when they are required. The
+uppercase root filenames are exceptions required by client conventions. Other
+names should be lowercase when practical.
 
 ## Repository areas
 
-- `files/` - deployable collaboration sources: `CLAUDE.md`, `AGENTS.md`,
-  `index.md`, `human.md`, and `persona.md`
+- `files/` - deployable collaboration sources: `CLAUDE.md` and `AGENTS.md`
 - `real/` - reviewed copies ready for project deployment
 - `software/` - optional software guidance
 - `templates/` - reusable document scaffolding
@@ -28,7 +28,7 @@ Other names should be lowercase when practical.
 - `.llm/` - active context for this repository itself
 
 The reusable files are source material. They are not active instructions for
-dotmdfiles unless `.llm/index.md` or the current task selects them.
+dotmdfiles merely because they exist under `files/` or `real/`.
 
 ## Deployment
 
@@ -46,7 +46,7 @@ Set up a project with:
 sh bin/setup-project.sh /path/to/project
 ```
 
-The five managed files are ordinary project-local copies. Projects do not
+The two managed files are ordinary project-local copies. Projects do not
 depend on symlinks back to the dotmdfiles checkout.
 
 For a software project, name optional guidance files to install under `.llm/`:
@@ -75,7 +75,7 @@ Check every registered project without changing anything:
 sh bin/sync-project-files.sh --check
 ```
 
-Copy and verify the five shared files deliberately:
+Synchronize the two shared root files deliberately:
 
 ```sh
 sh bin/sync-project-files.sh --apply
@@ -85,9 +85,9 @@ Pass project paths to either command to limit the operation. Set `projectsFile`
 or `projectsRoot` to override the defaults. The older `PROJECTS_FILE` and
 `PROJECTS_ROOT` spellings remain temporarily accepted.
 
-The synchronizer changes only `CLAUDE.md`, `AGENTS.md`, `.llm/index.md`,
-`.llm/human.md`, and `.llm/persona.md`. It does not recursively copy `.llm/`
-or modify any other project files.
+The synchronizer changes only `CLAUDE.md` and `AGENTS.md`. It preserves the
+marked project-context block inside each existing `AGENTS.md` and does not
+modify `.llm/` or any other project files.
 
 ## Working taxonomy
 
