@@ -1,7 +1,7 @@
 #!/bin/sh
-# Keep shared collaboration files synchronized across projects.
+# Keep the two shared discovery files synchronized across projects.
 # AGENTS.md preserves each project's marked project-context block.
-# All other project files, including other .llm content, are left unchanged.
+# All other project files, including .llm content, are left unchanged.
 
 set -eu
 
@@ -15,7 +15,7 @@ Usage:
   sync-project-files.sh --apply [PROJECT...]
 
 --check  Report differences without changing anything. This is the default.
---apply  Synchronize the shared files into each project, then verify them.
+--apply  Synchronize AGENTS.md and CLAUDE.md into each project, then verify them.
 
 AGENTS.md is synchronized specially: the shared portions come from the
 canonical file while the target project's marked project-context block is
@@ -50,7 +50,7 @@ scriptDir=$(CDPATH= cd "$(dirname "$0")" && pwd)
 projectRoot=$(CDPATH= cd "$scriptDir/.." && pwd)
 sourceDir=$projectRoot/real
 
-for sourceName in CLAUDE.md AGENTS.md index.md human.md persona.md; do
+for sourceName in CLAUDE.md AGENTS.md; do
     if [ ! -f "$sourceDir/$sourceName" ]; then
         echo "Missing shared source: $sourceDir/$sourceName" >&2
         exit 2
@@ -256,16 +256,8 @@ syncProject() {
     preflightProject "$targetDir"
 
     echo "Project: $targetDir"
-
-    if [ "$mode" = apply ]; then
-        mkdir -p "$targetDir/.llm"
-    fi
-
     syncAgents "$sourceDir/AGENTS.md" "$targetDir/AGENTS.md" "AGENTS.md"
     syncFile "$sourceDir/CLAUDE.md" "$targetDir/CLAUDE.md" "CLAUDE.md"
-    syncFile "$sourceDir/index.md" "$targetDir/.llm/index.md" ".llm/index.md"
-    syncFile "$sourceDir/human.md" "$targetDir/.llm/human.md" ".llm/human.md"
-    syncFile "$sourceDir/persona.md" "$targetDir/.llm/persona.md" ".llm/persona.md"
 }
 
 if [ "$#" -gt 0 ]; then
