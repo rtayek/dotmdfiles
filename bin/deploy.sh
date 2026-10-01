@@ -2,8 +2,8 @@
 # deploy.sh — copy the real .md files from this project's working copy
 # (files/) to real/, the canonical source for copies installed in projects.
 #
-# Run this after editing anything in files/ and committing the change here,
-# so the deployed copy stays in sync with what's checked into git.
+# Run this after editing files/, then review and commit the source and deployed
+# copies together.
 
 set -euo pipefail
 

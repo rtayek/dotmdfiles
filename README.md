@@ -1,8 +1,7 @@
 # dotmdfiles
 
-A working collection of operational Markdown for LLM and agent projects.
-ChatMap is the current pilot for discovery, project context, metadata, and
-loading behavior.
+A working collection of shared agent instructions, deployment tools, reusable
+software guidance, and supporting research.
 
 ## Current discovery model
 
@@ -19,31 +18,41 @@ names should be lowercase when practical.
 
 ## Repository areas
 
+- `bin/` - deployment, setup, registry, synchronization, and regression-test
+  scripts
 - `files/` - deployable collaboration sources: `CLAUDE.md` and `AGENTS.md`
 - `real/` - reviewed copies ready for project deployment
 - `software/` - optional software guidance
+- `semantic/` - design research, not active project instructions
 - `templates/` - reusable document scaffolding
 - `prompts/` - reusable prompts
 - `.llm/handoffs/` - working and historical transfer records
-- `.llm/` - active context for this repository itself
+- `.llm/project-context.md` - retired context from the earlier split-document
+  pilot, retained only as historical evidence
+
+Root-level notes and `project-home.html` are working artifacts. They are not
+part of shared project deployment.
 
 The reusable files are source material. They are not active instructions for
 dotmdfiles merely because they exist under `files/` or `real/`.
 
 ## Deployment
 
-Deploy the shared sources after reviewing and committing changes:
+Edit deployable instructions in `files/`, then refresh `real/`:
 
 ```sh
-sh bin/deploy.sh
+bash bin/deploy.sh
 ```
 
-This copies `files/*.md` to `real/`.
+The script copies `files/*.md` to `real/`. Review and commit the source and
+deployed copies together. It does not remove a retired template from `real/`;
+delete the corresponding source and deployed files explicitly when retiring
+one.
 
 Set up a project with:
 
 ```sh
-sh bin/setup-project.sh /path/to/project
+bash bin/setup-project.sh /path/to/project
 ```
 
 The two managed files are ordinary project-local copies. Projects do not
@@ -52,7 +61,7 @@ depend on symlinks back to the dotmdfiles checkout.
 For a software project, name optional guidance files to install under `.llm/`:
 
 ```sh
-sh bin/setup-project.sh /path/to/project coding-style.md design.md architecture.md sdlc.md java.md
+bash bin/setup-project.sh /path/to/project coding-style.md design.md architecture.md sdlc.md java.md
 ```
 
 The setup script never overwrites an existing file.
@@ -75,6 +84,8 @@ Check every registered project without changing anything:
 sh bin/sync-project-files.sh --check
 ```
 
+The check exits nonzero when a managed file differs or is missing.
+
 Synchronize the two shared root files deliberately:
 
 ```sh
@@ -88,6 +99,20 @@ or `projectsRoot` to override the defaults. The older `PROJECTS_FILE` and
 The synchronizer changes only `CLAUDE.md` and `AGENTS.md`. It preserves the
 marked project-context block inside each existing `AGENTS.md` and does not
 modify `.llm/` or any other project files.
+
+## Validation
+
+There is no application build. Validate shell syntax and the synchronizer with:
+
+```sh
+bash -n bin/deploy.sh bin/setup-project.sh
+sh -n bin/project-paths.sh bin/sync-project-files.sh bin/sync-project-files-test.sh tar-some.sh
+sh bin/sync-project-files-test.sh
+git diff --check
+```
+
+The regression test uses temporary directories and does not modify registered
+projects.
 
 ## Working taxonomy
 

@@ -197,7 +197,7 @@ Agents MUST ask before renaming or moving tracked project files unless the curre
 
 ## Project Document Map
 
-- Read `.llm/project-context.md` only when checking the legacy project-context source during this consolidation pilot.
+- Read `.llm/project-context.md` only when the task requires historical evidence from the retired split-document pilot.
 - Read `.llm/handoffs/` only when the current task explicitly requires historical evidence or continuation from a handoff.
 - Read `prompts/`, `semantic/`, `software/`, or `templates/` only when the current task specifically concerns that material.
 - `bin/deploy.sh` copies `files/*.md` into `real/`.
