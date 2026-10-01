@@ -183,20 +183,17 @@ When useful, include:
 
 ## Project Requirements
 
-This block is owned by the repository receiving the shared instructions.
-
-Project-specific requirements belong here. Synchronization tooling MUST preserve this block when updating the shared portions of `AGENTS.md`.
+No project-specific requirements.
 
 ## Project Document Map
 
-List only documents that agents may need, and state exactly when they must be read.
+No project documents are required reading.
 
-Example:
-
-```markdown
-- Agents MUST read `.llm/design.md` before changing architecture.
-- Agents MUST read `.llm/working-context.md` when continuing unfinished project work.
-- Agents MUST NOT read `.llm/handoffs/` unless the current task requires historical evidence.
-```
+<!--
+This block is owned by the receiving repository and is preserved by
+synchronization. Replace the "No ..." lines only when the project needs
+its own rules. List each document with exactly when it must be read,
+for example: "Read `.llm/design.md` before changing architecture."
+-->
 
 <!-- END PROJECT CONTEXT -->
