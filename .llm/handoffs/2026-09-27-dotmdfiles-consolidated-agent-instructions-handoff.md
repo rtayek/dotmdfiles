@@ -1,11 +1,15 @@
 ---
 id: DMF-HANDOFF-2026-09-27-01
-lifecycle: working
-status: active
+lifecycle: historical
+status: superseded
 provenance: chat-handoff
 ---
 
 # Handoff: Consolidated Agent Instructions and Skills Architecture
+
+This handoff predates implementation. The two-file model and synchronization
+described here were completed; current authority is the root `AGENTS.md` and
+README, together with System's accepted consolidation decision.
 
 ## Purpose
 
