@@ -13,7 +13,8 @@ Usage:
 
 Environment:
   projectsFile  Registry file. Defaults to ~/.config/ray/projects.tsv.
-  projectsRoot  Base for relative paths. Defaults to ~/eclipse-workspace.
+  projectsRoot  Base used only for legacy relative registry paths.
+                Defaults to ~/eclipse-workspace.
   PROJECTS_FILE and PROJECTS_ROOT are accepted during migration.
 EOF
 }
@@ -44,11 +45,6 @@ projectsRoot=${projectsRoot:-${PROJECTS_ROOT:-"$HOME/eclipse-workspace"}}
     exit 2
 }
 
-[ -d "$projectsRoot" ] || {
-    echo "Projects root does not exist: $projectsRoot" >&2
-    exit 2
-}
-
 tab=$(printf '\t')
 awk -F "$tab" 'NR > 1 { print $1 "|" $2 }' "$projectsFile" |
 (
@@ -67,10 +63,15 @@ awk -F "$tab" 'NR > 1 { print $1 "|" $2 }' "$projectsFile" |
             "~/"*)
                 projectPath=$HOME/${projectValue#??}
                 ;;
-            /*)
+            /*|[A-Za-z]:/*)
                 projectPath=$projectValue
                 ;;
             *)
+                if [ ! -d "$projectsRoot" ]; then
+                    echo "Projects root does not exist for relative registry path: $projectsRoot" >&2
+                    missing=1
+                    continue
+                fi
                 projectPath=$projectsRoot/$projectValue
                 ;;
         esac
