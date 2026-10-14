@@ -1,3 +1,10 @@
+# Exploratory Language Notes
+
+> Status: historical exploration. The current model is defined by root
+> `AGENTS.md` and System's accepted consolidated-instructions decision. In
+> particular, skills are `SKILL.md` packages with optional scripts, references,
+> and assets; they are not primarily YAML or JSON dispatch contracts.
+
 The discussion evaluated several candidate languages and representations for defining rules, contracts, and invariants in `.md` files, weighing LLM parsing reliability against human expressiveness:
 
 ### 1. Evaluated Formats
